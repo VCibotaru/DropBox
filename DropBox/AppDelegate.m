@@ -7,18 +7,40 @@
 //
 
 #import "AppDelegate.h"
-
+#import "dropboxClient.h"
+#import "remoteFilesViewController.h"
 @implementation AppDelegate
+
+@synthesize dropboxManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    dropboxManager = [[dropboxClient alloc] init];
+    dropboxManager.delegate = self;
+    [dropboxManager setUpRestKit];
+    [dropboxManager dropBoxLogin];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    [dropboxManager parseOpenURL:url];
+    return YES;
+}
+-(void) didLogin
+{
+    remoteFilesViewController *first = [[remoteFilesViewController alloc] initWithNibName:@"remoteFilesViewController" bundle:[NSBundle mainBundle]];
+    first.dropboxManager = dropboxManager;
+    self.window.rootViewController = first;
+    [dropboxManager updateFiles];
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

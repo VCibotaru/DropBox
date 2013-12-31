@@ -19,6 +19,21 @@
 		711A997B187308AB007BE1FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A9963187308AB007BE1FC /* UIKit.framework */; };
 		711A9983187308AB007BE1FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 711A9981187308AB007BE1FC /* InfoPlist.strings */; };
 		711A9985187308AB007BE1FC /* DropBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A9984187308AB007BE1FC /* DropBoxTests.m */; };
+		711A999F18730975007BE1FC /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A9996187308E4007BE1FC /* libRestKit.a */; };
+		711A99A11873097D007BE1FC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A01873097D007BE1FC /* CFNetwork.framework */; };
+		711A99A318730987007BE1FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A218730987007BE1FC /* CoreData.framework */; };
+		711A99A518730990007BE1FC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A418730990007BE1FC /* libxml2.dylib */; };
+		711A99A7187309E6007BE1FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A6187309E6007BE1FC /* MobileCoreServices.framework */; };
+		711A99A9187309ED007BE1FC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A8187309ED007BE1FC /* QuartzCore.framework */; };
+		711A99AB187309F5007BE1FC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99AA187309F5007BE1FC /* Security.framework */; };
+		711A99AD187309FE007BE1FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99AC187309FE007BE1FC /* SystemConfiguration.framework */; };
+		711A99B118730A90007BE1FC /* dropboxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B018730A90007BE1FC /* dropboxClient.m */; };
+		711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */; };
+		711A99B718730B6F007BE1FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B618730B6F007BE1FC /* User.m */; };
+		711A99BA18730B70007BE1FC /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B918730B70007BE1FC /* File.m */; };
+		711A99BD18730B70007BE1FC /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99BC18730B70007BE1FC /* Quota.m */; };
+		711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99C018731495007BE1FC /* remoteFilesViewController.m */; };
+		711A99C318731495007BE1FC /* remoteFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711A99C118731495007BE1FC /* remoteFilesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +43,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 711A995B187308AB007BE1FC;
 			remoteInfo = DropBox;
+		};
+		711A9995187308E4007BE1FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		711A9997187308E4007BE1FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		711A9999187308E4007BE1FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		711A999B187308E4007BE1FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		711A999D18730970007BE1FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -48,6 +98,26 @@
 		711A9980187308AB007BE1FC /* DropBoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DropBoxTests-Info.plist"; sourceTree = "<group>"; };
 		711A9982187308AB007BE1FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		711A9984187308AB007BE1FC /* DropBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropBoxTests.m; sourceTree = "<group>"; };
+		711A998E187308E4007BE1FC /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "../../RestKit-0.20.3/RestKit.xcodeproj"; sourceTree = "<group>"; };
+		711A99A01873097D007BE1FC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		711A99A218730987007BE1FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		711A99A418730990007BE1FC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		711A99A6187309E6007BE1FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		711A99A8187309ED007BE1FC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		711A99AA187309F5007BE1FC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		711A99AC187309FE007BE1FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		711A99AF18730A90007BE1FC /* dropboxClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dropboxClient.h; sourceTree = "<group>"; };
+		711A99B018730A90007BE1FC /* dropboxClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dropboxClient.m; sourceTree = "<group>"; };
+		711A99B318730B49007BE1FC /* DropboxFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DropboxFinal.xcdatamodel; sourceTree = "<group>"; };
+		711A99B518730B6F007BE1FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		711A99B618730B6F007BE1FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		711A99B818730B70007BE1FC /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		711A99B918730B70007BE1FC /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
+		711A99BB18730B70007BE1FC /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
+		711A99BC18730B70007BE1FC /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
+		711A99BF18731495007BE1FC /* remoteFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remoteFilesViewController.h; sourceTree = "<group>"; };
+		711A99C018731495007BE1FC /* remoteFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remoteFilesViewController.m; sourceTree = "<group>"; };
+		711A99C118731495007BE1FC /* remoteFilesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = remoteFilesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +125,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711A99AD187309FE007BE1FC /* SystemConfiguration.framework in Frameworks */,
+				711A99AB187309F5007BE1FC /* Security.framework in Frameworks */,
+				711A99A9187309ED007BE1FC /* QuartzCore.framework in Frameworks */,
+				711A99A7187309E6007BE1FC /* MobileCoreServices.framework in Frameworks */,
+				711A99A518730990007BE1FC /* libxml2.dylib in Frameworks */,
+				711A99A318730987007BE1FC /* CoreData.framework in Frameworks */,
+				711A99A11873097D007BE1FC /* CFNetwork.framework in Frameworks */,
+				711A999F18730975007BE1FC /* libRestKit.a in Frameworks */,
 				711A9962187308AB007BE1FC /* CoreGraphics.framework in Frameworks */,
 				711A9964187308AB007BE1FC /* UIKit.framework in Frameworks */,
 				711A9960187308AB007BE1FC /* Foundation.framework in Frameworks */,
@@ -77,6 +155,7 @@
 		711A9953187308AB007BE1FC = {
 			isa = PBXGroup;
 			children = (
+				711A998E187308E4007BE1FC /* RestKit.xcodeproj */,
 				711A9965187308AB007BE1FC /* DropBox */,
 				711A997E187308AB007BE1FC /* DropBoxTests */,
 				711A995E187308AB007BE1FC /* Frameworks */,
@@ -96,6 +175,13 @@
 		711A995E187308AB007BE1FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				711A99AC187309FE007BE1FC /* SystemConfiguration.framework */,
+				711A99AA187309F5007BE1FC /* Security.framework */,
+				711A99A8187309ED007BE1FC /* QuartzCore.framework */,
+				711A99A6187309E6007BE1FC /* MobileCoreServices.framework */,
+				711A99A418730990007BE1FC /* libxml2.dylib */,
+				711A99A218730987007BE1FC /* CoreData.framework */,
+				711A99A01873097D007BE1FC /* CFNetwork.framework */,
 				711A995F187308AB007BE1FC /* Foundation.framework */,
 				711A9961187308AB007BE1FC /* CoreGraphics.framework */,
 				711A9963187308AB007BE1FC /* UIKit.framework */,
@@ -109,6 +195,13 @@
 			children = (
 				711A996E187308AB007BE1FC /* AppDelegate.h */,
 				711A996F187308AB007BE1FC /* AppDelegate.m */,
+				711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */,
+				711A99AF18730A90007BE1FC /* dropboxClient.h */,
+				711A99B018730A90007BE1FC /* dropboxClient.m */,
+				711A99BF18731495007BE1FC /* remoteFilesViewController.h */,
+				711A99C018731495007BE1FC /* remoteFilesViewController.m */,
+				711A99C118731495007BE1FC /* remoteFilesViewController.xib */,
+				711A99BE18730B81007BE1FC /* Model classes */,
 				711A9971187308AB007BE1FC /* Images.xcassets */,
 				711A9966187308AB007BE1FC /* Supporting Files */,
 			);
@@ -144,6 +237,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		711A998F187308E4007BE1FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				711A9996187308E4007BE1FC /* libRestKit.a */,
+				711A9998187308E4007BE1FC /* RestKitTests.octest */,
+				711A999A187308E4007BE1FC /* RestKit.framework */,
+				711A999C187308E4007BE1FC /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		711A99BE18730B81007BE1FC /* Model classes */ = {
+			isa = PBXGroup;
+			children = (
+				711A99BB18730B70007BE1FC /* Quota.h */,
+				711A99BC18730B70007BE1FC /* Quota.m */,
+				711A99B818730B70007BE1FC /* File.h */,
+				711A99B918730B70007BE1FC /* File.m */,
+				711A99B518730B6F007BE1FC /* User.h */,
+				711A99B618730B6F007BE1FC /* User.m */,
+			);
+			name = "Model classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,6 +275,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				711A999E18730970007BE1FC /* PBXTargetDependency */,
 			);
 			name = DropBox;
 			productName = DropBox;
@@ -206,6 +324,12 @@
 			mainGroup = 711A9953187308AB007BE1FC;
 			productRefGroup = 711A995D187308AB007BE1FC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 711A998F187308E4007BE1FC /* Products */;
+					ProjectRef = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				711A995B187308AB007BE1FC /* DropBox */,
@@ -214,6 +338,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		711A9996187308E4007BE1FC /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 711A9995187308E4007BE1FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		711A9998187308E4007BE1FC /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 711A9997187308E4007BE1FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		711A999A187308E4007BE1FC /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 711A9999187308E4007BE1FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		711A999C187308E4007BE1FC /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 711A999B187308E4007BE1FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		711A995A187308AB007BE1FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -221,6 +376,7 @@
 			files = (
 				711A996A187308AB007BE1FC /* InfoPlist.strings in Resources */,
 				711A9972187308AB007BE1FC /* Images.xcassets in Resources */,
+				711A99C318731495007BE1FC /* remoteFilesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711A99B718730B6F007BE1FC /* User.m in Sources */,
+				711A99BD18730B70007BE1FC /* Quota.m in Sources */,
 				711A9970187308AB007BE1FC /* AppDelegate.m in Sources */,
+				711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */,
+				711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */,
 				711A996C187308AB007BE1FC /* main.m in Sources */,
+				711A99B118730A90007BE1FC /* dropboxClient.m in Sources */,
+				711A99BA18730B70007BE1FC /* File.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +421,11 @@
 			isa = PBXTargetDependency;
 			target = 711A995B187308AB007BE1FC /* DropBox */;
 			targetProxy = 711A997C187308AB007BE1FC /* PBXContainerItemProxy */;
+		};
+		711A999E18730970007BE1FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 711A999D18730970007BE1FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -361,7 +528,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropBox/DropBox-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = "DropBox/DropBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -374,7 +548,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropBox/DropBox-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = "DropBox/DropBox-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -451,6 +632,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				711A99B318730B49007BE1FC /* DropboxFinal.xcdatamodel */,
+			);
+			currentVersion = 711A99B318730B49007BE1FC /* DropboxFinal.xcdatamodel */;
+			path = DropboxFinal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 711A9954187308AB007BE1FC /* Project object */;
 }

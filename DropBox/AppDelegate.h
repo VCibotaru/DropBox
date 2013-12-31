@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "dropboxClient.h"
+@interface AppDelegate : UIResponder <UIApplicationDelegate, dropboxSyncProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) dropboxClient *dropboxManager;
 @end

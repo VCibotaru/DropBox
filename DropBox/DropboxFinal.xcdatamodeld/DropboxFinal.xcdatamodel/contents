@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F37" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="File" representedClassName="File" syncable="YES">
+        <attribute name="folderHash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isDir" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="localPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rev" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="savedOnDevice" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="thumbExists" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="files" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Quota" representedClassName="Quota" syncable="YES">
+        <attribute name="normal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="quota" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="shared" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="userInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="quotaInfo" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="referralLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="user" inverseEntity="File" syncable="YES"/>
+        <relationship name="quotaInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quota" inverseName="userInfo" inverseEntity="Quota" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="File" positionX="-3692" positionY="-2758" width="128" height="208"/>
+        <element name="Quota" positionX="-4167" positionY="-2722" width="128" height="103"/>
+        <element name="User" positionX="-3924" positionY="-2718" width="128" height="133"/>
+    </elements>
+</model>
