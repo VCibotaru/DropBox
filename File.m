@@ -22,6 +22,7 @@
 @dynamic savedOnDevice;
 @dynamic size;
 @dynamic thumbExists;
+@dynamic isDel;
 @dynamic user;
 
 @end

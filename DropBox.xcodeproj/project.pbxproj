@@ -30,10 +30,10 @@
 		711A99B118730A90007BE1FC /* dropboxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B018730A90007BE1FC /* dropboxClient.m */; };
 		711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */; };
 		711A99B718730B6F007BE1FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B618730B6F007BE1FC /* User.m */; };
-		711A99BA18730B70007BE1FC /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B918730B70007BE1FC /* File.m */; };
 		711A99BD18730B70007BE1FC /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99BC18730B70007BE1FC /* Quota.m */; };
 		711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99C018731495007BE1FC /* remoteFilesViewController.m */; };
 		711A99C318731495007BE1FC /* remoteFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711A99C118731495007BE1FC /* remoteFilesViewController.xib */; };
+		711A99C9187330A6007BE1FC /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99C8187330A6007BE1FC /* File.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,13 +111,13 @@
 		711A99B318730B49007BE1FC /* DropboxFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DropboxFinal.xcdatamodel; sourceTree = "<group>"; };
 		711A99B518730B6F007BE1FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		711A99B618730B6F007BE1FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		711A99B818730B70007BE1FC /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
-		711A99B918730B70007BE1FC /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		711A99BB18730B70007BE1FC /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
 		711A99BC18730B70007BE1FC /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
 		711A99BF18731495007BE1FC /* remoteFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remoteFilesViewController.h; sourceTree = "<group>"; };
 		711A99C018731495007BE1FC /* remoteFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remoteFilesViewController.m; sourceTree = "<group>"; };
 		711A99C118731495007BE1FC /* remoteFilesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = remoteFilesViewController.xib; sourceTree = "<group>"; };
+		711A99C7187330A6007BE1FC /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = ../File.h; sourceTree = "<group>"; };
+		711A99C8187330A6007BE1FC /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = ../File.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,10 +251,10 @@
 		711A99BE18730B81007BE1FC /* Model classes */ = {
 			isa = PBXGroup;
 			children = (
+				711A99C7187330A6007BE1FC /* File.h */,
+				711A99C8187330A6007BE1FC /* File.m */,
 				711A99BB18730B70007BE1FC /* Quota.h */,
 				711A99BC18730B70007BE1FC /* Quota.m */,
-				711A99B818730B70007BE1FC /* File.h */,
-				711A99B918730B70007BE1FC /* File.m */,
 				711A99B518730B6F007BE1FC /* User.h */,
 				711A99B618730B6F007BE1FC /* User.m */,
 			);
@@ -396,13 +396,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				711A99B718730B6F007BE1FC /* User.m in Sources */,
+				711A99C9187330A6007BE1FC /* File.m in Sources */,
 				711A99BD18730B70007BE1FC /* Quota.m in Sources */,
 				711A9970187308AB007BE1FC /* AppDelegate.m in Sources */,
 				711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */,
 				711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */,
 				711A996C187308AB007BE1FC /* main.m in Sources */,
 				711A99B118730A90007BE1FC /* dropboxClient.m in Sources */,
-				711A99BA18730B70007BE1FC /* File.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,12 +25,47 @@
 @synthesize objectStore;
 @synthesize delegate;
 
+- (void) checkToken
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    userToken = [userDefaults stringForKey:@"dropBoxToken"];
+    uid = [userDefaults stringForKey:@"dropboxUID"];
+}
 - (void) dropBoxLogin
+{
+    [self checkToken];
+    if (userToken) {
+        RKEntityMapping* fileMapping = [RKEntityMapping mappingForEntityForName:@"User" inManagedObjectStore:objectManager.managedObjectStore];
+        [fileMapping addAttributeMappingsFromDictionary:@{
+                                                          @"referral_link": @"refferalLink",
+                                                          @"country": @"country",
+                                                          @"display_name": @"displayName",
+                                                          @"uid": @"uid"
+                                                          }];
+        fileMapping.identificationAttributes = @[@"uid"];
+        RKResponseDescriptor *fileDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:fileMapping method:RKRequestMethodGET pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+        [objectManager addResponseDescriptor:fileDescriptor];
+        [objectManager getObjectsAtPath:@"1/account/info" parameters:nil
+                                success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+         {
+         }
+                                failure:^(RKObjectRequestOperation *operation, NSError *error)
+         {
+             [self openURL];
+         }];
+        [objectManager removeResponseDescriptor:fileDescriptor];
+    }
+    else  {
+        [self openURL];
+    }
+    
+}
+
+-(void) openURL
 {
     NSString *urlString = [NSString stringWithFormat:@"%s?response_type=%s&client_id=%s&redirect_uri=%s",LOGIN_URL, RESPONSE_TYPE, APP_KEY, REDIRECT_URI];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
-
 -(void) parseOpenURL:(NSURL *) url
 {
     NSString *urlString = [url absoluteString];
@@ -46,11 +81,16 @@
         }
         if ([key isEqualToString:@"uid"]) {
             uid = [[NSString alloc] initWithString:[pairComponents objectAtIndex:1]];
+            continue;
         }
     }
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:userToken forKey:@"dropBoxToken"];
+    [userDefaults setObject:uid forKey:@"dropUID"];
+    [userDefaults synchronize];
     [objectManager setAcceptHeaderWithMIMEType:RKMIMETypeJSON];
     [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", userToken]];
-    [delegate didLogin];
+    [delegate didLogin:NO];
 }
 -(void) setUpRestKit
 {
@@ -74,7 +114,8 @@
                                                          @"bytes": @"size",
                                                          @"icon": @"icon",
                                                          @"thumb_exists": @"thumbExists",
-                                                         @"rev": @"rev"
+                                                         @"rev": @"rev",
+                                                         @"is_del": @"isDel"
                                                          }];
     fileMapping.identificationAttributes = @[@"rev"];
     RKResponseDescriptor *fileDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:fileMapping method:RKRequestMethodGET pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
@@ -82,6 +123,9 @@
     [objectManager getObjectsAtPath:@"1/search/dropbox" parameters:@{@"query": @"."}
         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
         {
+            for (File *file in [mappingResult array]) {
+                NSLog(@"%@", file.path);
+            }
         }
         failure:^(RKObjectRequestOperation *operation, NSError *error)
         {

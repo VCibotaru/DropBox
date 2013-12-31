@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSNumber * savedOnDevice;
 @property (nonatomic, retain) NSNumber * size;
 @property (nonatomic, retain) NSNumber * thumbExists;
+@property (nonatomic, retain) NSNumber * isDel;
 @property (nonatomic, retain) User *user;
 
 @end

@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData.h>
+#import "User.h"
 
 @protocol dropboxSyncProtocol <NSObject>
-- (void) didLogin;
+- (void) didLogin: (BOOL) offline;
 - (void) didSyncFileList;
 @end
 

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "dropboxClient.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate, dropboxSyncProtocol>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, dropboxSyncProtocol, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) dropboxClient *dropboxManager;
+@property (strong, nonatomic) UITabBarController * tabBarController;
 @end

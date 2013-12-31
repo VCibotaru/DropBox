@@ -16,9 +16,9 @@
 @implementation remoteFilesViewController
 
 @synthesize dropboxManager;
+@synthesize offlineMode;
 
 - (NSFetchedResultsController *)fetchedResultsController{
-    
     if (!_fetchedResultsController) {
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([File class])];
         fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"path" ascending:YES]];
@@ -26,7 +26,6 @@
         self.fetchedResultsController.delegate = self;
         NSError *error;
         [self.fetchedResultsController performFetch:&error];
-        NSLog(@"%@",[self.fetchedResultsController fetchedObjects]);
         NSAssert(!error, @"Error performing fetch request: %@", error);
     }
     return _fetchedResultsController;
@@ -45,12 +44,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!offlineMode) [dropboxManager updateFiles];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,6 +81,7 @@
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
+    
     [self.tableView reloadData];
 }
 /*

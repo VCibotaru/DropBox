@@ -9,23 +9,21 @@
 #import "AppDelegate.h"
 #import "dropboxClient.h"
 #import "remoteFilesViewController.h"
+
 @implementation AppDelegate
 
 @synthesize dropboxManager;
+@synthesize tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    dropboxManager = [[dropboxClient alloc] init];
-    dropboxManager.delegate = self;
-    [dropboxManager setUpRestKit];
-    [dropboxManager dropBoxLogin];
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello!" message:@"You are now redirected to dropbox login page" delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:@"Stay Offline!", nil];
+    [alert show];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -34,12 +32,19 @@
     [dropboxManager parseOpenURL:url];
     return YES;
 }
--(void) didLogin
+-(void) didLogin: (BOOL) offline;
 {
+    tabBarController = [[UITabBarController alloc] init];
     remoteFilesViewController *first = [[remoteFilesViewController alloc] initWithNibName:@"remoteFilesViewController" bundle:[NSBundle mainBundle]];
     first.dropboxManager = dropboxManager;
-    self.window.rootViewController = first;
-    [dropboxManager updateFiles];
+    first.offlineMode = offline;
+    first.title = @"Your DropBox files";
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:first];
+    navController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
+    
+    tabBarController.viewControllers = [NSArray arrayWithObject:navController];
+    self.window.rootViewController = tabBarController;
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -67,5 +72,18 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    dropboxManager = [[dropboxClient alloc] init];
+    dropboxManager.delegate = self;
+    [dropboxManager setUpRestKit];
+    if (!buttonIndex) {
+        [dropboxManager dropBoxLogin];
+    }
+    else {
+        [self didLogin:YES];
+        
+    }
+    
+}
 @end
