@@ -48,6 +48,7 @@
         [objectManager getObjectsAtPath:@"1/account/info" parameters:nil
                                 success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
          {
+             NSLog(@"found user\n");
          }
                                 failure:^(RKObjectRequestOperation *operation, NSError *error)
          {
@@ -86,7 +87,7 @@
     }
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:userToken forKey:@"dropBoxToken"];
-    [userDefaults setObject:uid forKey:@"dropUID"];
+    [userDefaults setObject:uid forKey:@"dropboxUID"];
     [userDefaults synchronize];
     [objectManager setAcceptHeaderWithMIMEType:RKMIMETypeJSON];
     [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", userToken]];
@@ -115,7 +116,8 @@
                                                          @"icon": @"icon",
                                                          @"thumb_exists": @"thumbExists",
                                                          @"rev": @"rev",
-                                                         @"is_del": @"isDel"
+                                                         @"is_del": @"isDel",
+                                                         @"is_dir": @"isDir"
                                                          }];
     fileMapping.identificationAttributes = @[@"rev"];
     RKResponseDescriptor *fileDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:fileMapping method:RKRequestMethodGET pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
@@ -124,7 +126,8 @@
         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
         {
             for (File *file in [mappingResult array]) {
-                NSLog(@"%@", file.path);
+                file.uid = [NSString stringWithString:uid];
+            
             }
         }
         failure:^(RKObjectRequestOperation *operation, NSError *error)

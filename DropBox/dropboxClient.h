@@ -13,7 +13,6 @@
 
 @protocol dropboxSyncProtocol <NSObject>
 - (void) didLogin: (BOOL) offline;
-- (void) didSyncFileList;
 @end
 
 @interface dropboxClient : NSObject

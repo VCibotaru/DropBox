@@ -14,4 +14,5 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property dropboxClient *dropboxManager;
 @property BOOL offlineMode;
+
 @end

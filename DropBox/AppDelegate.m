@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "dropboxClient.h"
 #import "remoteFilesViewController.h"
+#import "savedFilesInfoViewController.h"
 
 @implementation AppDelegate
 
@@ -35,15 +36,21 @@
 -(void) didLogin: (BOOL) offline;
 {
     tabBarController = [[UITabBarController alloc] init];
-    remoteFilesViewController *first = [[remoteFilesViewController alloc] initWithNibName:@"remoteFilesViewController" bundle:[NSBundle mainBundle]];
+    
+    remoteFilesViewController *first = [[remoteFilesViewController alloc] init];
     first.dropboxManager = dropboxManager;
     first.offlineMode = offline;
     first.title = @"Your DropBox files";
+    UINavigationController *firstNavController = [[UINavigationController alloc] initWithRootViewController:first];
+    firstNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:first];
-    navController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
+    savedFilesInfoViewController *second = [[savedFilesInfoViewController alloc] init];
+    second.dropboxManager = dropboxManager;
+    second.title = @"Saved files";
+    UINavigationController *secondNavController = [[UINavigationController alloc] initWithRootViewController:second];
+    second.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:1];
     
-    tabBarController.viewControllers = [NSArray arrayWithObject:navController];
+    tabBarController.viewControllers = [NSArray arrayWithObjects:firstNavController, secondNavController, nil];
     self.window.rootViewController = tabBarController;
 }
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -81,6 +88,8 @@
         [dropboxManager dropBoxLogin];
     }
     else {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        dropboxManager.uid = [userDefaults stringForKey:@"dropboxUID"];
         [self didLogin:YES];
         
     }

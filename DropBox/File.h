@@ -2,8 +2,8 @@
 //  File.h
 //  DropBox
 //
-//  Created by Viktor Chibotaru on 12/31/13.
-//  Copyright (c) 2013 Viktor Chibotaru. All rights reserved.
+//  Created by Viktor Chibotaru on 1/1/14.
+//  Copyright (c) 2014 Viktor Chibotaru. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSNumber * size;
 @property (nonatomic, retain) NSNumber * thumbExists;
 @property (nonatomic, retain) NSNumber * isDel;
+@property (nonatomic, retain) NSString * uid;
 @property (nonatomic, retain) User *user;
 
 @end

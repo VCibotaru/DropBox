@@ -8,6 +8,8 @@
 
 #import "remoteFilesViewController.h"
 #import "File.h"
+#import "customFileCell.h"
+#import "savedFilesInfoViewController.h"
 
 @interface remoteFilesViewController ()
 
@@ -22,6 +24,7 @@
     if (!_fetchedResultsController) {
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([File class])];
         fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"path" ascending:YES]];
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(uid == %@)", dropboxManager.uid]];
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[dropboxManager.objectManager managedObjectStore].mainQueueManagedObjectContext sectionNameKeyPath:nil cacheName:@"File"];
         self.fetchedResultsController.delegate = self;
         NSError *error;
@@ -67,16 +70,28 @@
 
     return [[self.fetchedResultsController fetchedObjects] count];
 }
-
+-(float) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 92.0f;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"customFileCell";
+    customFileCell *cell = (customFileCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"customFileCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     File *file = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = file.path;
+    if (file.savedOnDevice || offlineMode) {
+        cell.downloadButton.hidden = YES;
+    }
+    cell.bigLabel.text = file.path.lastPathComponent;
+    cell.smallLabel.text = [NSString stringWithFormat:@"File size: %@", file.size];
+    cell.dropboxManager = dropboxManager;
+    cell.file = file;
+    NSString *fileType = [NSString stringWithFormat:@"%@48.gif", file.icon];
+    cell.imageView.image = [UIImage imageNamed:fileType];
     return cell;
 }
 
@@ -123,22 +138,14 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
+    fileInfoViewController *detailViewController = [[fileInfoViewController alloc] initWithNibName:@"fileInfoViewController" bundle:nil];
+    detailViewController.selectedFile = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self.navigationController pushViewController:detailViewController animated:YES];
-}
- 
- */
-
+}*/
 @end
