@@ -74,6 +74,8 @@
 		716430471875AB7100F923B5 /* detailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716430451875AB7100F923B5 /* detailViewController.xib */; };
 		7164304A1875BEC400F923B5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 716430491875BEC400F923B5 /* User.m */; };
 		7164304D1875BEC500F923B5 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164304C1875BEC500F923B5 /* File.m */; };
+		716430511876029F00F923B5 /* uploadFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164304F1876029F00F923B5 /* uploadFilesViewController.m */; };
+		716430521876029F00F923B5 /* uploadFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716430501876029F00F923B5 /* uploadFilesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +204,9 @@
 		716430481875BEC400F923B5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		716430491875BEC400F923B5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		7164304C1875BEC500F923B5 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
+		7164304E1876029F00F923B5 /* uploadFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uploadFilesViewController.h; sourceTree = "<group>"; };
+		7164304F1876029F00F923B5 /* uploadFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uploadFilesViewController.m; sourceTree = "<group>"; };
+		716430501876029F00F923B5 /* uploadFilesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = uploadFilesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +284,9 @@
 			children = (
 				711A996E187308AB007BE1FC /* AppDelegate.h */,
 				711A996F187308AB007BE1FC /* AppDelegate.m */,
+				7164304E1876029F00F923B5 /* uploadFilesViewController.h */,
+				7164304F1876029F00F923B5 /* uploadFilesViewController.m */,
+				716430501876029F00F923B5 /* uploadFilesViewController.xib */,
 				711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */,
 				711A99AF18730A90007BE1FC /* dropboxClient.h */,
 				711A99B018730A90007BE1FC /* dropboxClient.m */,
@@ -532,6 +540,7 @@
 				711A9A0518735609007BE1FC /* page_white_dvd.gif in Resources */,
 				711A99FF18735609007BE1FC /* page_white_actionscript48.gif in Resources */,
 				711A9A0318735609007BE1FC /* page_white_csharp.gif in Resources */,
+				716430521876029F00F923B5 /* uploadFilesViewController.xib in Resources */,
 				711A99F418735609007BE1FC /* folder_app48.gif in Resources */,
 				711A99F218735609007BE1FC /* excel48.gif in Resources */,
 				711A99FA18735609007BE1FC /* folder_user_gray48.gif in Resources */,
@@ -570,6 +579,7 @@
 			files = (
 				7164304A1875BEC400F923B5 /* User.m in Sources */,
 				711A99CC1873541C007BE1FC /* customFileCell.m in Sources */,
+				716430511876029F00F923B5 /* uploadFilesViewController.m in Sources */,
 				711A99BD18730B70007BE1FC /* Quota.m in Sources */,
 				711A9970187308AB007BE1FC /* AppDelegate.m in Sources */,
 				7164304D1875BEC500F923B5 /* File.m in Sources */,

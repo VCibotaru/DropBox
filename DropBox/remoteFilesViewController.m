@@ -61,7 +61,7 @@
     NSError *error;
     [context save:&error];
     [context saveToPersistentStore:&error];
-    if (!offlineMode) [dropboxManager updateFiles];
+    [dropboxManager updateFiles];
 
 }
 -(IBAction)refreshFileList:(id)sender
@@ -77,7 +77,9 @@
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshFileList:)];
-    [self refreshFileList:nil];
+    if (!offlineMode) {
+        [self fetchFiles];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,13 +115,13 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     File *file = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.bigLabel.text = file.path.lastPathComponent;
+    cell.smallLabel.text = [NSString stringWithFormat:@"File size: %@", file.size];
     if ([file.savedOnDevice boolValue] == YES) {
         cell.downloadButton.hidden = YES;
         cell.bigLabel.text = [NSString stringWithFormat:@"Saved in: %@", file.localPath];
     }
     else {
         cell.downloadButton.hidden = NO;
-        cell.smallLabel.text = [NSString stringWithFormat:@"File size: %@", file.size];
     }
     if (offlineMode == YES) {
         cell.downloadButton.hidden = YES;

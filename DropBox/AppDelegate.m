@@ -10,6 +10,8 @@
 #import "dropboxClient.h"
 #import "remoteFilesViewController.h"
 #import "savedFilesInfoViewController.h"
+#import "uploadFilesViewController.h"
+
 
 @implementation AppDelegate
 
@@ -42,7 +44,7 @@
     first.offlineMode = offline;
     first.title = @"Your DropBox files";
     UINavigationController *firstNavController = [[UINavigationController alloc] initWithRootViewController:first];
-    firstNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
+    firstNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:0];
     
     savedFilesInfoViewController *second = [[savedFilesInfoViewController alloc] init];
     second.dropboxManager = dropboxManager;
@@ -50,7 +52,14 @@
     UINavigationController *secondNavController = [[UINavigationController alloc] initWithRootViewController:second];
     second.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:1];
     
-    tabBarController.viewControllers = [NSArray arrayWithObjects:firstNavController, secondNavController, nil];
+    uploadFilesViewController *third = [[uploadFilesViewController alloc] initWithNibName:@"uploadFilesViewController" bundle:[NSBundle mainBundle]];
+    third.dropboxManager = dropboxManager;
+    third.title = @"Upload photos";
+    third.offline = offline;
+    UINavigationController *thirdNavController = [[UINavigationController alloc] initWithRootViewController:third];
+    thirdNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:2];
+    
+    tabBarController.viewControllers = [NSArray arrayWithObjects:firstNavController, secondNavController, thirdNavController, nil];
     self.window.rootViewController = tabBarController;
 }
 - (void)applicationWillResignActive:(UIApplication *)application
