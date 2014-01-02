@@ -25,7 +25,7 @@
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([File class])];
         fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"path" ascending:YES]];
         [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(uid == %@)", dropboxManager.uid]];
-        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[dropboxManager.objectManager managedObjectStore].mainQueueManagedObjectContext sectionNameKeyPath:nil cacheName:@"File"];
+        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[dropboxManager.objectManager managedObjectStore].mainQueueManagedObjectContext sectionNameKeyPath:nil cacheName:@"remoteFiles"];
         self.fetchedResultsController.delegate = self;
         NSError *error;
         [self.fetchedResultsController performFetch:&error];
@@ -82,12 +82,19 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"customFileCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     File *file = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    if (file.savedOnDevice || offlineMode) {
+    cell.bigLabel.text = file.path.lastPathComponent;
+    if ([file.savedOnDevice boolValue] == YES) {
+        cell.downloadButton.hidden = YES;
+        cell.bigLabel.text = [NSString stringWithFormat:@"Saved in: %@", file.localPath];
+    }
+    else {
+         cell.smallLabel.text = [NSString stringWithFormat:@"File size: %@", file.size];
+    }
+    if (offlineMode == YES) {
         cell.downloadButton.hidden = YES;
     }
-    cell.bigLabel.text = file.path.lastPathComponent;
-    cell.smallLabel.text = [NSString stringWithFormat:@"File size: %@", file.size];
     cell.dropboxManager = dropboxManager;
     cell.file = file;
     NSString *fileType = [NSString stringWithFormat:@"%@48.gif", file.icon];

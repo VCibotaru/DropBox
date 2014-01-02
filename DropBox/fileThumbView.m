@@ -13,6 +13,7 @@
 @synthesize imageView;
 @synthesize file;
 @synthesize label;
+@synthesize dropboxManager;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,8 +24,36 @@
     return self;
 }
 
-- (void) setFile:(File *)file
+- (void) setFile:(File *)fileToSet
 {
-    
+    file = fileToSet;
+    label.text = file.path.lastPathComponent;
+    if ([file.thumbExists boolValue] == YES) {
+        NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"thumb%@",file.localPath]];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:storePath]) {
+            imageView.image = [UIImage imageWithContentsOfFile:storePath];
+        }
+        else {
+            NSString *urlString = [NSString stringWithFormat:@"https://api-content.dropbox.com/1/thumbnails/dropbox%@", [file.path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            NSURL *url = [NSURL URLWithString:urlString];
+            NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+            [request setValue:[NSString stringWithFormat:@"Bearer %@", dropboxManager.userToken] forHTTPHeaderField:@"Authorization"];
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+            operation.outputStream = [NSOutputStream outputStreamToFileAtPath:storePath append:NO];
+            [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSLog(@"Downloaded thumb!\n");
+                imageView.image = [UIImage imageWithContentsOfFile:storePath];
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+                NSLog(@"%@", error);
+            }];
+            [operation start];
+        }
+    }
+    else {
+        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@48.gif", file.icon]];
+    }
+
 }
 @end

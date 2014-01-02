@@ -61,11 +61,7 @@
          progressView.progress = (double) totalBytesRead / (double) totalBytesExpectedToRead;
      }];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"SUCCCESSFULL IMG RETRIEVE to %@!",storePath);
-        downloadButton.hidden = NO;
         progressView.hidden = YES;
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"%@", error);

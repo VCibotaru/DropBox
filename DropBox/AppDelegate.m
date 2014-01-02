@@ -90,6 +90,10 @@
     else {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         dropboxManager.uid = [userDefaults stringForKey:@"dropboxUID"];
+        if (!dropboxManager.uid) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"No valid user info found in userDefaults, so no files will be displayed. Please log in!" delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+            [alert show];
+        }
         [self didLogin:YES];
         
     }
