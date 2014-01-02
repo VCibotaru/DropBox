@@ -8,6 +8,7 @@
 
 #import "savedFilesInfoViewController.h"
 #import "fileThumbView.h"
+#import "detailViewController.h"
 
 @interface savedFilesInfoViewController ()
 
@@ -52,29 +53,25 @@
     UITapGestureRecognizer *tap = (UITapGestureRecognizer *) sender;
     fileThumbView *thumbView = (fileThumbView *) tap.view;
     File *file = thumbView.file;
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath =  [paths objectAtIndex:0];
-    NSString *fileLoc = [basePath stringByAppendingString:[NSString stringWithFormat:@"/%@", file.localPath]];
-    /*NSURL *url = [NSURL fileURLWithPath:fileLoc];
-    NSLog(@"%@", [url absoluteString]);
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];*/
-    NSURL *url = [NSURL URLWithString:@"http://google.com"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-#warning open other view controller 
-    UIWebView *webView = [[UIWebView alloc] init];
-    [self.view addSubview:webView];
-    [webView loadRequest:request];
-    
+
+    detailViewController *detail = [[detailViewController alloc] initWithNibName:@"detailViewController" bundle:[NSBundle mainBundle]];
+    detail.file = file;
+    detail.hidesBottomBarWhenPushed = YES;
+    detail.dropboxManager = dropboxManager;
+    [self.navigationController pushViewController:detail animated:YES];
 }
 - (void) refreshSubViews
 {
     if (!fileViews) {
         fileViews = [[NSMutableArray alloc] init];
     }
+    for (fileThumbView *thumbView in fileViews) {
+        [thumbView removeFromSuperview];
+    }
     [fileViews removeAllObjects];
     int i = 0;
     for (File *file in self.fetchedResultsController.fetchedObjects) {
+        if ([file.savedOnDevice boolValue] == NO || file.localPath == nil) continue;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"fileThumbView" owner:self options:nil];
         fileThumbView *thumbView = [nib objectAtIndex:0];
         [thumbView setFrame:CGRectMake(THUMB_HORIZONTAL_SPACE + (THUMB_HORIZONTAL_SPACE + THUMB_WIDTH) * (i % 2),

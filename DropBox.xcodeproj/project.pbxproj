@@ -29,7 +29,6 @@
 		711A99AD187309FE007BE1FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99AC187309FE007BE1FC /* SystemConfiguration.framework */; };
 		711A99B118730A90007BE1FC /* dropboxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B018730A90007BE1FC /* dropboxClient.m */; };
 		711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */; };
-		711A99B718730B6F007BE1FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B618730B6F007BE1FC /* User.m */; };
 		711A99BD18730B70007BE1FC /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99BC18730B70007BE1FC /* Quota.m */; };
 		711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99C018731495007BE1FC /* remoteFilesViewController.m */; };
 		711A99CC1873541C007BE1FC /* customFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99CB1873541C007BE1FC /* customFileCell.m */; };
@@ -68,10 +67,13 @@
 		711A9A1118735609007BE1FC /* page_white_zip48.gif in Resources */ = {isa = PBXBuildFile; fileRef = 711A99EF18735609007BE1FC /* page_white_zip48.gif */; };
 		711A9A1218735609007BE1FC /* powerpoint48.gif in Resources */ = {isa = PBXBuildFile; fileRef = 711A99F018735609007BE1FC /* powerpoint48.gif */; };
 		711A9A1318735609007BE1FC /* word48.gif in Resources */ = {isa = PBXBuildFile; fileRef = 711A99F118735609007BE1FC /* word48.gif */; };
-		711A9A1618743787007BE1FC /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A9A1518743787007BE1FC /* File.m */; };
 		711A9A1A18743885007BE1FC /* savedFilesInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A9A1818743885007BE1FC /* savedFilesInfoViewController.m */; };
 		7164303F1874D30800F923B5 /* fileThumbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7164303E1874D30800F923B5 /* fileThumbView.xib */; };
 		716430421874D3BC00F923B5 /* fileThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 716430411874D3BC00F923B5 /* fileThumbView.m */; };
+		716430461875AB7100F923B5 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716430441875AB7100F923B5 /* detailViewController.m */; };
+		716430471875AB7100F923B5 /* detailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716430451875AB7100F923B5 /* detailViewController.xib */; };
+		7164304A1875BEC400F923B5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 716430491875BEC400F923B5 /* User.m */; };
+		7164304D1875BEC500F923B5 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164304C1875BEC500F923B5 /* File.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,8 +149,6 @@
 		711A99AF18730A90007BE1FC /* dropboxClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dropboxClient.h; sourceTree = "<group>"; };
 		711A99B018730A90007BE1FC /* dropboxClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dropboxClient.m; sourceTree = "<group>"; };
 		711A99B318730B49007BE1FC /* DropboxFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DropboxFinal.xcdatamodel; sourceTree = "<group>"; };
-		711A99B518730B6F007BE1FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		711A99B618730B6F007BE1FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		711A99BB18730B70007BE1FC /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
 		711A99BC18730B70007BE1FC /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
 		711A99BF18731495007BE1FC /* remoteFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remoteFilesViewController.h; sourceTree = "<group>"; };
@@ -191,12 +191,17 @@
 		711A99F018735609007BE1FC /* powerpoint48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = powerpoint48.gif; sourceTree = "<group>"; };
 		711A99F118735609007BE1FC /* word48.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = word48.gif; sourceTree = "<group>"; };
 		711A9A1418743787007BE1FC /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
-		711A9A1518743787007BE1FC /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		711A9A1718743885007BE1FC /* savedFilesInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = savedFilesInfoViewController.h; sourceTree = "<group>"; };
 		711A9A1818743885007BE1FC /* savedFilesInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = savedFilesInfoViewController.m; sourceTree = "<group>"; };
 		7164303E1874D30800F923B5 /* fileThumbView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = fileThumbView.xib; path = ../fileThumbView.xib; sourceTree = "<group>"; };
 		716430401874D3BC00F923B5 /* fileThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileThumbView.h; sourceTree = "<group>"; };
 		716430411874D3BC00F923B5 /* fileThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileThumbView.m; sourceTree = "<group>"; };
+		716430431875AB7100F923B5 /* detailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailViewController.h; sourceTree = "<group>"; };
+		716430441875AB7100F923B5 /* detailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailViewController.m; sourceTree = "<group>"; };
+		716430451875AB7100F923B5 /* detailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = detailViewController.xib; sourceTree = "<group>"; };
+		716430481875BEC400F923B5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		716430491875BEC400F923B5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7164304C1875BEC500F923B5 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +286,9 @@
 				711A99C018731495007BE1FC /* remoteFilesViewController.m */,
 				711A9A1718743885007BE1FC /* savedFilesInfoViewController.h */,
 				711A9A1818743885007BE1FC /* savedFilesInfoViewController.m */,
+				716430431875AB7100F923B5 /* detailViewController.h */,
+				716430441875AB7100F923B5 /* detailViewController.m */,
+				716430451875AB7100F923B5 /* detailViewController.xib */,
 				716430401874D3BC00F923B5 /* fileThumbView.h */,
 				716430411874D3BC00F923B5 /* fileThumbView.m */,
 				7164303E1874D30800F923B5 /* fileThumbView.xib */,
@@ -339,11 +347,11 @@
 			isa = PBXGroup;
 			children = (
 				711A9A1418743787007BE1FC /* File.h */,
-				711A9A1518743787007BE1FC /* File.m */,
+				7164304C1875BEC500F923B5 /* File.m */,
+				716430481875BEC400F923B5 /* User.h */,
+				716430491875BEC400F923B5 /* User.m */,
 				711A99BB18730B70007BE1FC /* Quota.h */,
 				711A99BC18730B70007BE1FC /* Quota.m */,
-				711A99B518730B6F007BE1FC /* User.h */,
-				711A99B618730B6F007BE1FC /* User.m */,
 			);
 			name = "Model classes";
 			sourceTree = "<group>";
@@ -509,6 +517,7 @@
 				711A9A0918735609007BE1FC /* page_white_paint48.gif in Resources */,
 				711A9A0A18735609007BE1FC /* page_white_php48.gif in Resources */,
 				711A99F318735609007BE1FC /* folder48.gif in Resources */,
+				716430471875AB7100F923B5 /* detailViewController.xib in Resources */,
 				711A99F718735609007BE1FC /* folder_public48.gif in Resources */,
 				711A9A0D18735609007BE1FC /* page_white_text48.gif in Resources */,
 				711A9A1218735609007BE1FC /* powerpoint48.gif in Resources */,
@@ -559,17 +568,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				711A99B718730B6F007BE1FC /* User.m in Sources */,
+				7164304A1875BEC400F923B5 /* User.m in Sources */,
 				711A99CC1873541C007BE1FC /* customFileCell.m in Sources */,
 				711A99BD18730B70007BE1FC /* Quota.m in Sources */,
 				711A9970187308AB007BE1FC /* AppDelegate.m in Sources */,
-				711A9A1618743787007BE1FC /* File.m in Sources */,
+				7164304D1875BEC500F923B5 /* File.m in Sources */,
 				711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */,
 				711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */,
 				716430421874D3BC00F923B5 /* fileThumbView.m in Sources */,
 				711A996C187308AB007BE1FC /* main.m in Sources */,
 				711A9A1A18743885007BE1FC /* savedFilesInfoViewController.m in Sources */,
 				711A99B118730A90007BE1FC /* dropboxClient.m in Sources */,
+				716430461875AB7100F923B5 /* detailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

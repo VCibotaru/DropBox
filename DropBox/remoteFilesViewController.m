@@ -85,12 +85,14 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     File *file = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.bigLabel.text = file.path.lastPathComponent;
+    NSLog(@"%@\n\n", file.localPath);
     if ([file.savedOnDevice boolValue] == YES) {
         cell.downloadButton.hidden = YES;
         cell.bigLabel.text = [NSString stringWithFormat:@"Saved in: %@", file.localPath];
     }
     else {
-         cell.smallLabel.text = [NSString stringWithFormat:@"File size: %@", file.size];
+        cell.downloadButton.hidden = NO;
+        cell.smallLabel.text = [NSString stringWithFormat:@"File size: %@", file.size];
     }
     if (offlineMode == YES) {
         cell.downloadButton.hidden = YES;

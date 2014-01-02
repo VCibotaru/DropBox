@@ -13,7 +13,6 @@
         <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="thumbExists" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="files" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Quota" representedClassName="Quota" syncable="YES">
         <attribute name="normal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -26,12 +25,11 @@
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="referralLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="user" inverseEntity="File" syncable="YES"/>
         <relationship name="quotaInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quota" inverseName="userInfo" inverseEntity="Quota" syncable="YES"/>
     </entity>
     <elements>
-        <element name="File" positionX="-3692" positionY="-2758" width="128" height="238"/>
+        <element name="File" positionX="-3692" positionY="-2776" width="128" height="223"/>
         <element name="Quota" positionX="-4167" positionY="-2722" width="128" height="103"/>
-        <element name="User" positionX="-3924" positionY="-2718" width="128" height="133"/>
+        <element name="User" positionX="-3924" positionY="-2718" width="128" height="118"/>
     </elements>
 </model>
