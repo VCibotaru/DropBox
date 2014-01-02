@@ -72,7 +72,7 @@
         self.imageView.hidden = NO;
         return;
     }
-    NSArray *docs = [NSArray arrayWithObjects:@"xls", @"pdf", @"ppt", @"doc", @"rtf", @"key", @"numbers", @"pages", nil];
+    NSArray *docs = [NSArray arrayWithObjects:@"xls", @"pdf", @"ppt", @"doc", @"rtf", @"key", @"numbers", @"pages", @"txt", nil];
     if ([docs containsObject:ext]) {
         NSURL *url = [NSURL fileURLWithPath:storePath];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];

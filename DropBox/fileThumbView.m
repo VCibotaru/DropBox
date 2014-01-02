@@ -27,7 +27,7 @@
 - (void) setFile:(File *)fileToSet
 {
     file = fileToSet;
-    label.text = file.path.lastPathComponent;
+    label.text = file.localPath;
     if ([file.thumbExists boolValue] == YES) {
         NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"thumb%@",file.localPath]];
         if ([[NSFileManager defaultManager] fileExistsAtPath:storePath]) {

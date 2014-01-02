@@ -24,7 +24,7 @@
     if (!_fetchedResultsController) {
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([File class])];
         fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"path" ascending:YES]];
-        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(uid == %@)", dropboxManager.uid]];
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(uid == %@) && (path != nil)", dropboxManager.uid]];
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[dropboxManager.objectManager managedObjectStore].mainQueueManagedObjectContext sectionNameKeyPath:nil cacheName:@"remoteFiles"];
         self.fetchedResultsController.delegate = self;
         NSError *error;
@@ -43,13 +43,41 @@
     }
     return self;
 }
+- (void) fetchFiles
+{
+    NSManagedObjectContext *context = [dropboxManager.objectManager managedObjectStore].mainQueueManagedObjectContext;
+    NSMutableArray *toDelete = [[NSMutableArray alloc] init];
+    for (File *file in self.fetchedResultsController.fetchedObjects) {
+        if ([file.savedOnDevice boolValue] == NO) {
+            [toDelete addObject:file];
+        }
+        else {
+            file.path = nil;
+        }
+    }
+    for (File *file in toDelete) {
+        [context deleteObject:file];
+    }
+    NSError *error;
+    [context save:&error];
+    [context saveToPersistentStore:&error];
+    if (!offlineMode) [dropboxManager updateFiles];
 
+}
+-(IBAction)refreshFileList:(id)sender
+{
+    if (offlineMode) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"You are offline, please login to refresh file list" delegate:nil cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    [self fetchFiles];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!offlineMode) [dropboxManager updateFiles];
-
-    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshFileList:)];
+    [self refreshFileList:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,7 +113,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     File *file = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.bigLabel.text = file.path.lastPathComponent;
-    NSLog(@"%@\n\n", file.localPath);
     if ([file.savedOnDevice boolValue] == YES) {
         cell.downloadButton.hidden = YES;
         cell.bigLabel.text = [NSString stringWithFormat:@"Saved in: %@", file.localPath];

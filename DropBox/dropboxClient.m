@@ -109,6 +109,7 @@
 }
 -(void) updateFiles
 {
+    
     RKEntityMapping* fileMapping = [RKEntityMapping mappingForEntityForName:@"File" inManagedObjectStore:objectManager.managedObjectStore];
     [fileMapping addAttributeMappingsFromDictionary:@{
                                                          @"path": @"path",
@@ -127,7 +128,6 @@
         {
             for (File *file in [mappingResult array]) {
                 file.uid = [NSString stringWithString:uid];
-            
             }
         }
         failure:^(RKObjectRequestOperation *operation, NSError *error)

@@ -53,7 +53,6 @@
     UITapGestureRecognizer *tap = (UITapGestureRecognizer *) sender;
     fileThumbView *thumbView = (fileThumbView *) tap.view;
     File *file = thumbView.file;
-
     detailViewController *detail = [[detailViewController alloc] initWithNibName:@"detailViewController" bundle:[NSBundle mainBundle]];
     detail.file = file;
     detail.hidesBottomBarWhenPushed = YES;
