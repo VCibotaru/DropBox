@@ -29,7 +29,6 @@
 		711A99AD187309FE007BE1FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99AC187309FE007BE1FC /* SystemConfiguration.framework */; };
 		711A99B118730A90007BE1FC /* dropboxClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B018730A90007BE1FC /* dropboxClient.m */; };
 		711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */; };
-		711A99BD18730B70007BE1FC /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99BC18730B70007BE1FC /* Quota.m */; };
 		711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99C018731495007BE1FC /* remoteFilesViewController.m */; };
 		711A99CC1873541C007BE1FC /* customFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A99CB1873541C007BE1FC /* customFileCell.m */; };
 		711A99CE18735435007BE1FC /* customFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711A99CD18735435007BE1FC /* customFileCell.xib */; };
@@ -76,6 +75,13 @@
 		7164304D1875BEC500F923B5 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164304C1875BEC500F923B5 /* File.m */; };
 		716430511876029F00F923B5 /* uploadFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164304F1876029F00F923B5 /* uploadFilesViewController.m */; };
 		716430521876029F00F923B5 /* uploadFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716430501876029F00F923B5 /* uploadFilesViewController.xib */; };
+		7164305A18762C4A00F923B5 /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164305818762C4A00F923B5 /* settingsViewController.m */; };
+		7164305B18762C4A00F923B5 /* settingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7164305918762C4A00F923B5 /* settingsViewController.xib */; };
+		7164305F187632EA00F923B5 /* arrow-big-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 7164305D187632EA00F923B5 /* arrow-big-03.png */; };
+		71643060187632EA00F923B5 /* arrow-big-04.png in Resources */ = {isa = PBXBuildFile; fileRef = 7164305E187632EA00F923B5 /* arrow-big-04.png */; };
+		716430621876339100F923B5 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 716430611876339100F923B5 /* gear.png */; };
+		71643064187633F000F923B5 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 71643063187633F000F923B5 /* wifi.png */; };
+		7164306718763C3D00F923B5 /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164306618763C3D00F923B5 /* Quota.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,8 +157,6 @@
 		711A99AF18730A90007BE1FC /* dropboxClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dropboxClient.h; sourceTree = "<group>"; };
 		711A99B018730A90007BE1FC /* dropboxClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dropboxClient.m; sourceTree = "<group>"; };
 		711A99B318730B49007BE1FC /* DropboxFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DropboxFinal.xcdatamodel; sourceTree = "<group>"; };
-		711A99BB18730B70007BE1FC /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
-		711A99BC18730B70007BE1FC /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
 		711A99BF18731495007BE1FC /* remoteFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remoteFilesViewController.h; sourceTree = "<group>"; };
 		711A99C018731495007BE1FC /* remoteFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remoteFilesViewController.m; sourceTree = "<group>"; };
 		711A99CA1873541C007BE1FC /* customFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customFileCell.h; sourceTree = "<group>"; };
@@ -207,6 +211,15 @@
 		7164304E1876029F00F923B5 /* uploadFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uploadFilesViewController.h; sourceTree = "<group>"; };
 		7164304F1876029F00F923B5 /* uploadFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uploadFilesViewController.m; sourceTree = "<group>"; };
 		716430501876029F00F923B5 /* uploadFilesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = uploadFilesViewController.xib; sourceTree = "<group>"; };
+		7164305718762C4A00F923B5 /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
+		7164305818762C4A00F923B5 /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsViewController.m; sourceTree = "<group>"; };
+		7164305918762C4A00F923B5 /* settingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = settingsViewController.xib; sourceTree = "<group>"; };
+		7164305D187632EA00F923B5 /* arrow-big-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-big-03.png"; sourceTree = "<group>"; };
+		7164305E187632EA00F923B5 /* arrow-big-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-big-04.png"; sourceTree = "<group>"; };
+		716430611876339100F923B5 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		71643063187633F000F923B5 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
+		7164306518763C3D00F923B5 /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
+		7164306618763C3D00F923B5 /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,25 +297,14 @@
 			children = (
 				711A996E187308AB007BE1FC /* AppDelegate.h */,
 				711A996F187308AB007BE1FC /* AppDelegate.m */,
-				7164304E1876029F00F923B5 /* uploadFilesViewController.h */,
-				7164304F1876029F00F923B5 /* uploadFilesViewController.m */,
-				716430501876029F00F923B5 /* uploadFilesViewController.xib */,
+				7164305518762C0200F923B5 /* saved Files */,
+				7164305618762C1300F923B5 /* details */,
+				7164305418762BFB00F923B5 /* remote Files */,
+				7164305C18762C4E00F923B5 /* settings */,
+				7164305318762BEC00F923B5 /* upload Files */,
 				711A99B218730B49007BE1FC /* DropboxFinal.xcdatamodeld */,
 				711A99AF18730A90007BE1FC /* dropboxClient.h */,
 				711A99B018730A90007BE1FC /* dropboxClient.m */,
-				711A99BF18731495007BE1FC /* remoteFilesViewController.h */,
-				711A99C018731495007BE1FC /* remoteFilesViewController.m */,
-				711A9A1718743885007BE1FC /* savedFilesInfoViewController.h */,
-				711A9A1818743885007BE1FC /* savedFilesInfoViewController.m */,
-				716430431875AB7100F923B5 /* detailViewController.h */,
-				716430441875AB7100F923B5 /* detailViewController.m */,
-				716430451875AB7100F923B5 /* detailViewController.xib */,
-				716430401874D3BC00F923B5 /* fileThumbView.h */,
-				716430411874D3BC00F923B5 /* fileThumbView.m */,
-				7164303E1874D30800F923B5 /* fileThumbView.xib */,
-				711A99CA1873541C007BE1FC /* customFileCell.h */,
-				711A99CB1873541C007BE1FC /* customFileCell.m */,
-				711A99CD18735435007BE1FC /* customFileCell.xib */,
 				711A99CF18735609007BE1FC /* 48x48 */,
 				711A99BE18730B81007BE1FC /* Model classes */,
 				711A9971187308AB007BE1FC /* Images.xcassets */,
@@ -354,12 +356,12 @@
 		711A99BE18730B81007BE1FC /* Model classes */ = {
 			isa = PBXGroup;
 			children = (
+				7164306518763C3D00F923B5 /* Quota.h */,
+				7164306618763C3D00F923B5 /* Quota.m */,
 				711A9A1418743787007BE1FC /* File.h */,
 				7164304C1875BEC500F923B5 /* File.m */,
 				716430481875BEC400F923B5 /* User.h */,
 				716430491875BEC400F923B5 /* User.m */,
-				711A99BB18730B70007BE1FC /* Quota.h */,
-				711A99BC18730B70007BE1FC /* Quota.m */,
 			);
 			name = "Model classes";
 			sourceTree = "<group>";
@@ -367,6 +369,10 @@
 		711A99CF18735609007BE1FC /* 48x48 */ = {
 			isa = PBXGroup;
 			children = (
+				71643063187633F000F923B5 /* wifi.png */,
+				716430611876339100F923B5 /* gear.png */,
+				7164305D187632EA00F923B5 /* arrow-big-03.png */,
+				7164305E187632EA00F923B5 /* arrow-big-04.png */,
 				711A99D018735609007BE1FC /* excel48.gif */,
 				711A99D118735609007BE1FC /* folder48.gif */,
 				711A99D218735609007BE1FC /* folder_app48.gif */,
@@ -404,6 +410,61 @@
 			);
 			name = 48x48;
 			path = "../../../dropbox-api-icons/48x48";
+			sourceTree = "<group>";
+		};
+		7164305318762BEC00F923B5 /* upload Files */ = {
+			isa = PBXGroup;
+			children = (
+				7164304E1876029F00F923B5 /* uploadFilesViewController.h */,
+				7164304F1876029F00F923B5 /* uploadFilesViewController.m */,
+				716430501876029F00F923B5 /* uploadFilesViewController.xib */,
+			);
+			name = "upload Files";
+			sourceTree = "<group>";
+		};
+		7164305418762BFB00F923B5 /* remote Files */ = {
+			isa = PBXGroup;
+			children = (
+				711A99CA1873541C007BE1FC /* customFileCell.h */,
+				711A99CB1873541C007BE1FC /* customFileCell.m */,
+				711A99CD18735435007BE1FC /* customFileCell.xib */,
+				711A99BF18731495007BE1FC /* remoteFilesViewController.h */,
+				711A99C018731495007BE1FC /* remoteFilesViewController.m */,
+			);
+			name = "remote Files";
+			sourceTree = "<group>";
+		};
+		7164305518762C0200F923B5 /* saved Files */ = {
+			isa = PBXGroup;
+			children = (
+				716430401874D3BC00F923B5 /* fileThumbView.h */,
+				716430411874D3BC00F923B5 /* fileThumbView.m */,
+				7164303E1874D30800F923B5 /* fileThumbView.xib */,
+				711A9A1718743885007BE1FC /* savedFilesInfoViewController.h */,
+				711A9A1818743885007BE1FC /* savedFilesInfoViewController.m */,
+			);
+			name = "saved Files";
+			sourceTree = "<group>";
+		};
+		7164305618762C1300F923B5 /* details */ = {
+			isa = PBXGroup;
+			children = (
+				716430431875AB7100F923B5 /* detailViewController.h */,
+				716430441875AB7100F923B5 /* detailViewController.m */,
+				716430451875AB7100F923B5 /* detailViewController.xib */,
+			);
+			name = details;
+			sourceTree = "<group>";
+		};
+		7164305C18762C4E00F923B5 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				7164305718762C4A00F923B5 /* settingsViewController.h */,
+				7164305818762C4A00F923B5 /* settingsViewController.m */,
+				7164305918762C4A00F923B5 /* settingsViewController.xib */,
+			);
+			name = settings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,16 +584,20 @@
 				711A9A0118735609007BE1FC /* page_white_code48.gif in Resources */,
 				711A9A0418735609007BE1FC /* page_white_cup48.gif in Resources */,
 				711A9A0918735609007BE1FC /* page_white_paint48.gif in Resources */,
+				71643060187632EA00F923B5 /* arrow-big-04.png in Resources */,
 				711A9A0A18735609007BE1FC /* page_white_php48.gif in Resources */,
 				711A99F318735609007BE1FC /* folder48.gif in Resources */,
 				716430471875AB7100F923B5 /* detailViewController.xib in Resources */,
 				711A99F718735609007BE1FC /* folder_public48.gif in Resources */,
 				711A9A0D18735609007BE1FC /* page_white_text48.gif in Resources */,
 				711A9A1218735609007BE1FC /* powerpoint48.gif in Resources */,
+				71643064187633F000F923B5 /* wifi.png in Resources */,
 				711A99F818735609007BE1FC /* folder_star48.gif in Resources */,
 				711A9A0C18735609007BE1FC /* page_white_ruby48.gif in Resources */,
 				7164303F1874D30800F923B5 /* fileThumbView.xib in Resources */,
 				711A9A0618735609007BE1FC /* page_white_flash48.gif in Resources */,
+				7164305B18762C4A00F923B5 /* settingsViewController.xib in Resources */,
+				7164305F187632EA00F923B5 /* arrow-big-03.png in Resources */,
 				711A99F918735609007BE1FC /* folder_user48.gif in Resources */,
 				711A996A187308AB007BE1FC /* InfoPlist.strings in Resources */,
 				711A9972187308AB007BE1FC /* Images.xcassets in Resources */,
@@ -542,6 +607,7 @@
 				711A9A0318735609007BE1FC /* page_white_csharp.gif in Resources */,
 				716430521876029F00F923B5 /* uploadFilesViewController.xib in Resources */,
 				711A99F418735609007BE1FC /* folder_app48.gif in Resources */,
+				716430621876339100F923B5 /* gear.png in Resources */,
 				711A99F218735609007BE1FC /* excel48.gif in Resources */,
 				711A99FA18735609007BE1FC /* folder_user_gray48.gif in Resources */,
 				711A99F618735609007BE1FC /* folder_gray48.gif in Resources */,
@@ -578,13 +644,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7164304A1875BEC400F923B5 /* User.m in Sources */,
+				7164305A18762C4A00F923B5 /* settingsViewController.m in Sources */,
 				711A99CC1873541C007BE1FC /* customFileCell.m in Sources */,
 				716430511876029F00F923B5 /* uploadFilesViewController.m in Sources */,
-				711A99BD18730B70007BE1FC /* Quota.m in Sources */,
 				711A9970187308AB007BE1FC /* AppDelegate.m in Sources */,
 				7164304D1875BEC500F923B5 /* File.m in Sources */,
 				711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */,
 				711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */,
+				7164306718763C3D00F923B5 /* Quota.m in Sources */,
 				716430421874D3BC00F923B5 /* fileThumbView.m in Sources */,
 				711A996C187308AB007BE1FC /* main.m in Sources */,
 				711A9A1A18743885007BE1FC /* savedFilesInfoViewController.m in Sources */,

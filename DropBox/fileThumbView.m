@@ -41,7 +41,6 @@
             AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
             operation.outputStream = [NSOutputStream outputStreamToFileAtPath:storePath append:NO];
             [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSLog(@"Downloaded thumb!\n");
                 imageView.image = [UIImage imageWithContentsOfFile:storePath];
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

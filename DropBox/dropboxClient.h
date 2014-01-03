@@ -13,6 +13,7 @@
 
 @protocol dropboxSyncProtocol <NSObject>
 - (void) didLogin: (BOOL) offline;
+- (void) didLogout;
 @end
 
 @interface dropboxClient : NSObject
@@ -26,7 +27,9 @@
 @property id<dropboxSyncProtocol> delegate;
 
 -(void) dropBoxLogin;
+-(void) dropBoxLogout;
 -(void) parseOpenURL: (NSURL *) url;
 -(void) updateFiles;
 -(void) setUpRestKit;
+-(void) updateUser;
 @end

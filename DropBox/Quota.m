@@ -2,8 +2,8 @@
 //  Quota.m
 //  DropBox
 //
-//  Created by Viktor Chibotaru on 12/31/13.
-//  Copyright (c) 2013 Viktor Chibotaru. All rights reserved.
+//  Created by Viktor Chibotaru on 1/3/14.
+//  Copyright (c) 2014 Viktor Chibotaru. All rights reserved.
 //
 
 #import "Quota.h"

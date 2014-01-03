@@ -48,8 +48,7 @@
     downloadButton.hidden = YES;
     progressView.hidden = NO;
     progressView.progress = 0.0f;
-    [self updateLocalPath];
-    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:file.localPath];
+    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:file.path.lastPathComponent];
     NSString *urlString = [NSString stringWithFormat:@"https://api-content.dropbox.com/1/files/dropbox%@", [file.path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
@@ -62,8 +61,12 @@
      }];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         progressView.hidden = YES;
+         [self updateLocalPath];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        progressView.hidden = YES;
+        downloadButton.hidden = NO;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:[NSString stringWithFormat:@"Error donwloading file %@! Please try again", file.path.lastPathComponent] delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
+        [alert show];
         NSLog(@"%@", error);
     }];
     [operation start];

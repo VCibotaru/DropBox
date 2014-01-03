@@ -8,15 +8,16 @@
 
 #import "AppDelegate.h"
 #import "dropboxClient.h"
-#import "remoteFilesViewController.h"
-#import "savedFilesInfoViewController.h"
-#import "uploadFilesViewController.h"
 
 
 @implementation AppDelegate
 
 @synthesize dropboxManager;
 @synthesize tabBarController;
+@synthesize first;
+@synthesize second;
+@synthesize third;
+@synthesize fourth;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -35,33 +36,52 @@
     [dropboxManager parseOpenURL:url];
     return YES;
 }
+- (void) didLogout
+{
+    first.offlineMode = YES;
+    third.offline = YES;
+    fourth.offline = YES;
+}
 -(void) didLogin: (BOOL) offline;
 {
-    tabBarController = [[UITabBarController alloc] init];
     
-    remoteFilesViewController *first = [[remoteFilesViewController alloc] init];
-    first.dropboxManager = dropboxManager;
+    
+    if (!first) {
+        tabBarController = [[UITabBarController alloc] init];
+        
+        first = [[remoteFilesViewController alloc] init];
+        first.dropboxManager = dropboxManager;
+        first.title = @"Your DropBox files";
+        UINavigationController *firstNavController = [[UINavigationController alloc] initWithRootViewController:first];
+        firstNavController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Dropbox files" image:[UIImage imageNamed:@"wifi.png"] tag:0];
+        
+        second = [[savedFilesInfoViewController alloc] init];
+        second.dropboxManager = dropboxManager;
+        second.title = @"Saved files";
+        UINavigationController *secondNavController = [[UINavigationController alloc] initWithRootViewController:second];
+        second.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Saved files" image:[UIImage imageNamed:@"arrow-big-04.png"] tag:1];
+        
+        third = [[uploadFilesViewController alloc] initWithNibName:@"uploadFilesViewController" bundle:[NSBundle mainBundle]];
+        third.dropboxManager = dropboxManager;
+        third.title = @"Upload photos";
+        UINavigationController *thirdNavController = [[UINavigationController alloc] initWithRootViewController:third];
+        thirdNavController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Upload files" image:[UIImage imageNamed:@"arrow-big-03.png"] tag:2];
+        
+        fourth = [[settingsViewController alloc] initWithNibName:@"settingsViewController" bundle:[NSBundle mainBundle]];
+        fourth.dropboxManager = dropboxManager;
+        fourth.title = @"Settings";
+        UINavigationController *fourthNavController = [[UINavigationController alloc] initWithRootViewController:fourth];
+        fourthNavController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:[UIImage imageNamed:@"gear.png"] tag:3];
+        
+        tabBarController.viewControllers = [NSArray arrayWithObjects:firstNavController, secondNavController, thirdNavController, fourthNavController, nil];
+        self.window.rootViewController = tabBarController;
+    }
+    
     first.offlineMode = offline;
-    first.title = @"Your DropBox files";
-    UINavigationController *firstNavController = [[UINavigationController alloc] initWithRootViewController:first];
-    firstNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:0];
-    
-    savedFilesInfoViewController *second = [[savedFilesInfoViewController alloc] init];
-    second.dropboxManager = dropboxManager;
-    second.title = @"Saved files";
-    UINavigationController *secondNavController = [[UINavigationController alloc] initWithRootViewController:second];
-    second.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:1];
-    
-    uploadFilesViewController *third = [[uploadFilesViewController alloc] initWithNibName:@"uploadFilesViewController" bundle:[NSBundle mainBundle]];
-    third.dropboxManager = dropboxManager;
-    third.title = @"Upload photos";
+    fourth.offline = offline;
     third.offline = offline;
-    UINavigationController *thirdNavController = [[UINavigationController alloc] initWithRootViewController:third];
-    thirdNavController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:2];
     
-    tabBarController.viewControllers = [NSArray arrayWithObjects:firstNavController, secondNavController, thirdNavController, nil];
-    self.window.rootViewController = tabBarController;
-}
+    }
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

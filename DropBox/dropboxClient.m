@@ -8,6 +8,8 @@
 
 #import "dropboxClient.h"
 #import "File.h"
+#import "User.h"
+#import "Quota.h"
 
 #define LOGIN_URL "https://www.dropbox.com/1/oauth2/authorize"
 #define APP_KEY "akzosdvbu3on4dh"
@@ -37,7 +39,7 @@
     if (userToken) {
         RKEntityMapping* fileMapping = [RKEntityMapping mappingForEntityForName:@"User" inManagedObjectStore:objectManager.managedObjectStore];
         [fileMapping addAttributeMappingsFromDictionary:@{
-                                                          @"referral_link": @"refferalLink",
+                                                          @"referral_link": @"referralLink",
                                                           @"country": @"country",
                                                           @"display_name": @"displayName",
                                                           @"uid": @"uid"
@@ -62,6 +64,21 @@
     
 }
 
+-(void) dropBoxLogout
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.dropbox.com/1/disable_access_token"]];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", userToken] forHTTPHeaderField:@"Authorization"];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"logout successfully\n");
+        [delegate didLogout];
+    }
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error){
+                                         NSLog(@"error at logout %@", [error userInfo]);
+    }];
+    [operation start];
+
+}
 -(void) openURL
 {
     NSString *urlString = [NSString stringWithFormat:@"%s?response_type=%s&client_id=%s&redirect_uri=%s",LOGIN_URL, RESPONSE_TYPE, APP_KEY, REDIRECT_URI];
@@ -129,12 +146,48 @@
             for (File *file in [mappingResult array]) {
                 file.uid = [NSString stringWithString:uid];
             }
+            NSManagedObjectContext *context = objectManager.managedObjectStore.mainQueueManagedObjectContext;
+            NSError *error;
+            [context save:&error];
+            [context saveToPersistentStore:&error];
         }
         failure:^(RKObjectRequestOperation *operation, NSError *error)
         {
             NSLog(@"Hit error: %@", [error localizedDescription]);
                       }];
     [objectManager removeResponseDescriptor:fileDescriptor];
+}
+-(void) updateUser
+{
+    RKEntityMapping *quotaMapping = [RKEntityMapping mappingForEntityForName:@"Quota" inManagedObjectStore:objectManager.managedObjectStore];
+    [quotaMapping addAttributeMappingsFromArray:@[@"normal", @"quota", @"shared"]];
+    
+     
+    RKEntityMapping* userMapping = [RKEntityMapping mappingForEntityForName:@"User" inManagedObjectStore:objectManager.managedObjectStore];
+    [userMapping addAttributeMappingsFromDictionary:@{
+                                                      @"referral_link": @"referralLink",
+                                                      @"country": @"country",
+                                                      @"display_name": @"displayName",
+                                                      @"uid": @"uid"
+                                                      }];
+    [userMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"quota_info" toKeyPath:@"quotaInfo" withMapping:quotaMapping]];
+    userMapping.identificationAttributes = @[@"uid"];
+    RKResponseDescriptor *userDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping method:RKRequestMethodGET pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:userDescriptor];
+    [objectManager getObjectsAtPath:@"1/account/info" parameters:nil
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+     {
+         NSLog(@"found user\n");
+         NSManagedObjectContext *context = objectManager.managedObjectStore.mainQueueManagedObjectContext;
+         NSError *error;
+         [context save:&error];
+         [context saveToPersistentStore:&error];
+     }
+                            failure:^(RKObjectRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error while parsing user: %@", [error userInfo]);
+     }];
+    [objectManager removeResponseDescriptor:userDescriptor];
 }
 
 @end

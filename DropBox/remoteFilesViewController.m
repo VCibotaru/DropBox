@@ -24,7 +24,7 @@
     if (!_fetchedResultsController) {
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([File class])];
         fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"path" ascending:YES]];
-        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(uid == %@) && (path != nil)", dropboxManager.uid]];
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"(uid == %@)", dropboxManager.uid]];
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[dropboxManager.objectManager managedObjectStore].mainQueueManagedObjectContext sectionNameKeyPath:nil cacheName:@"remoteFiles"];
         self.fetchedResultsController.delegate = self;
         NSError *error;
@@ -50,9 +50,6 @@
     for (File *file in self.fetchedResultsController.fetchedObjects) {
         if ([file.savedOnDevice boolValue] == NO) {
             [toDelete addObject:file];
-        }
-        else {
-            file.path = nil;
         }
     }
     for (File *file in toDelete) {
