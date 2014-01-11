@@ -76,12 +76,12 @@
 		716430521876029F00F923B5 /* uploadFilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716430501876029F00F923B5 /* uploadFilesViewController.xib */; };
 		7164305A18762C4A00F923B5 /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164305818762C4A00F923B5 /* settingsViewController.m */; };
 		7164305B18762C4A00F923B5 /* settingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7164305918762C4A00F923B5 /* settingsViewController.xib */; };
-		7164305F187632EA00F923B5 /* arrow-big-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 7164305D187632EA00F923B5 /* arrow-big-03.png */; };
-		71643060187632EA00F923B5 /* arrow-big-04.png in Resources */ = {isa = PBXBuildFile; fileRef = 7164305E187632EA00F923B5 /* arrow-big-04.png */; };
-		716430621876339100F923B5 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 716430611876339100F923B5 /* gear.png */; };
-		71643064187633F000F923B5 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 71643063187633F000F923B5 /* wifi.png */; };
 		7164306718763C3D00F923B5 /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164306618763C3D00F923B5 /* Quota.m */; };
 		71E4391B1881893C003610B0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E43912188188C3003610B0 /* libRestKit.a */; };
+		71E4392018818A26003610B0 /* arrow-big-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391C18818A26003610B0 /* arrow-big-03.png */; };
+		71E4392118818A26003610B0 /* arrow-big-04.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391D18818A26003610B0 /* arrow-big-04.png */; };
+		71E4392218818A26003610B0 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391E18818A26003610B0 /* gear.png */; };
+		71E4392318818A26003610B0 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391F18818A26003610B0 /* wifi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,13 +213,13 @@
 		7164305718762C4A00F923B5 /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
 		7164305818762C4A00F923B5 /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsViewController.m; sourceTree = "<group>"; };
 		7164305918762C4A00F923B5 /* settingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = settingsViewController.xib; sourceTree = "<group>"; };
-		7164305D187632EA00F923B5 /* arrow-big-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-big-03.png"; sourceTree = "<group>"; };
-		7164305E187632EA00F923B5 /* arrow-big-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-big-04.png"; sourceTree = "<group>"; };
-		716430611876339100F923B5 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
-		71643063187633F000F923B5 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
 		7164306518763C3D00F923B5 /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
 		7164306618763C3D00F923B5 /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
 		71E4390A188188C3003610B0 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "RestKit-0.20.3/RestKit.xcodeproj"; sourceTree = "<group>"; };
+		71E4391C18818A26003610B0 /* arrow-big-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-big-03.png"; path = "../../работа/DropBox/arrow-big-03.png"; sourceTree = "<group>"; };
+		71E4391D18818A26003610B0 /* arrow-big-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-big-04.png"; path = "../../работа/DropBox/arrow-big-04.png"; sourceTree = "<group>"; };
+		71E4391E18818A26003610B0 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = "../../работа/DropBox/gear.png"; sourceTree = "<group>"; };
+		71E4391F18818A26003610B0 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wifi.png; path = "../../работа/DropBox/wifi.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,10 +358,10 @@
 		711A99CF18735609007BE1FC /* 48x48 */ = {
 			isa = PBXGroup;
 			children = (
-				71643063187633F000F923B5 /* wifi.png */,
-				716430611876339100F923B5 /* gear.png */,
-				7164305D187632EA00F923B5 /* arrow-big-03.png */,
-				7164305E187632EA00F923B5 /* arrow-big-04.png */,
+				71E4391C18818A26003610B0 /* arrow-big-03.png */,
+				71E4391D18818A26003610B0 /* arrow-big-04.png */,
+				71E4391E18818A26003610B0 /* gear.png */,
+				71E4391F18818A26003610B0 /* wifi.png */,
 				711A99D018735609007BE1FC /* excel48.gif */,
 				711A99D118735609007BE1FC /* folder48.gif */,
 				711A99D218735609007BE1FC /* folder_app48.gif */,
@@ -584,20 +584,20 @@
 				711A9A0118735609007BE1FC /* page_white_code48.gif in Resources */,
 				711A9A0418735609007BE1FC /* page_white_cup48.gif in Resources */,
 				711A9A0918735609007BE1FC /* page_white_paint48.gif in Resources */,
-				71643060187632EA00F923B5 /* arrow-big-04.png in Resources */,
+				71E4392118818A26003610B0 /* arrow-big-04.png in Resources */,
 				711A9A0A18735609007BE1FC /* page_white_php48.gif in Resources */,
 				711A99F318735609007BE1FC /* folder48.gif in Resources */,
 				716430471875AB7100F923B5 /* detailViewController.xib in Resources */,
 				711A99F718735609007BE1FC /* folder_public48.gif in Resources */,
 				711A9A0D18735609007BE1FC /* page_white_text48.gif in Resources */,
 				711A9A1218735609007BE1FC /* powerpoint48.gif in Resources */,
-				71643064187633F000F923B5 /* wifi.png in Resources */,
+				71E4392318818A26003610B0 /* wifi.png in Resources */,
 				711A99F818735609007BE1FC /* folder_star48.gif in Resources */,
 				711A9A0C18735609007BE1FC /* page_white_ruby48.gif in Resources */,
 				7164303F1874D30800F923B5 /* fileThumbView.xib in Resources */,
 				711A9A0618735609007BE1FC /* page_white_flash48.gif in Resources */,
 				7164305B18762C4A00F923B5 /* settingsViewController.xib in Resources */,
-				7164305F187632EA00F923B5 /* arrow-big-03.png in Resources */,
+				71E4392018818A26003610B0 /* arrow-big-03.png in Resources */,
 				711A99F918735609007BE1FC /* folder_user48.gif in Resources */,
 				711A996A187308AB007BE1FC /* InfoPlist.strings in Resources */,
 				711A9972187308AB007BE1FC /* Images.xcassets in Resources */,
@@ -607,7 +607,7 @@
 				711A9A0318735609007BE1FC /* page_white_csharp.gif in Resources */,
 				716430521876029F00F923B5 /* uploadFilesViewController.xib in Resources */,
 				711A99F418735609007BE1FC /* folder_app48.gif in Resources */,
-				716430621876339100F923B5 /* gear.png in Resources */,
+				71E4392218818A26003610B0 /* gear.png in Resources */,
 				711A99F218735609007BE1FC /* excel48.gif in Resources */,
 				711A99FA18735609007BE1FC /* folder_user_gray48.gif in Resources */,
 				711A99F618735609007BE1FC /* folder_gray48.gif in Resources */,
