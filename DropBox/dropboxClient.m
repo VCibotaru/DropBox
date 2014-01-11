@@ -35,32 +35,7 @@
 }
 - (void) dropBoxLogin
 {
-    [self checkToken];
-    if (userToken) {
-        RKEntityMapping* fileMapping = [RKEntityMapping mappingForEntityForName:@"User" inManagedObjectStore:objectManager.managedObjectStore];
-        [fileMapping addAttributeMappingsFromDictionary:@{
-                                                          @"referral_link": @"referralLink",
-                                                          @"country": @"country",
-                                                          @"display_name": @"displayName",
-                                                          @"uid": @"uid"
-                                                          }];
-        fileMapping.identificationAttributes = @[@"uid"];
-        RKResponseDescriptor *fileDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:fileMapping method:RKRequestMethodGET pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-        [objectManager addResponseDescriptor:fileDescriptor];
-        [objectManager getObjectsAtPath:@"1/account/info" parameters:nil
-                                success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
-         {
-             NSLog(@"found user\n");
-         }
-                                failure:^(RKObjectRequestOperation *operation, NSError *error)
-         {
-             [self openURL];
-         }];
-        [objectManager removeResponseDescriptor:fileDescriptor];
-    }
-    else  {
         [self openURL];
-    }
     
 }
 
@@ -143,8 +118,10 @@
     [objectManager getObjectsAtPath:@"1/search/dropbox" parameters:@{@"query": @"."}
         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
         {
+            NSLog(@"files\n");
             for (File *file in [mappingResult array]) {
                 file.uid = [NSString stringWithString:uid];
+                NSLog(@"%@", file.path);
             }
             NSManagedObjectContext *context = objectManager.managedObjectStore.mainQueueManagedObjectContext;
             NSError *error;
@@ -154,15 +131,13 @@
         failure:^(RKObjectRequestOperation *operation, NSError *error)
         {
             NSLog(@"Hit error: %@", [error localizedDescription]);
-                      }];
+        }];
     [objectManager removeResponseDescriptor:fileDescriptor];
 }
 -(void) updateUser
 {
     RKEntityMapping *quotaMapping = [RKEntityMapping mappingForEntityForName:@"Quota" inManagedObjectStore:objectManager.managedObjectStore];
     [quotaMapping addAttributeMappingsFromArray:@[@"normal", @"quota", @"shared"]];
-    
-     
     RKEntityMapping* userMapping = [RKEntityMapping mappingForEntityForName:@"User" inManagedObjectStore:objectManager.managedObjectStore];
     [userMapping addAttributeMappingsFromDictionary:@{
                                                       @"referral_link": @"referralLink",

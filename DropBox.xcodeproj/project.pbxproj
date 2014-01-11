@@ -19,7 +19,6 @@
 		711A997B187308AB007BE1FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A9963187308AB007BE1FC /* UIKit.framework */; };
 		711A9983187308AB007BE1FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 711A9981187308AB007BE1FC /* InfoPlist.strings */; };
 		711A9985187308AB007BE1FC /* DropBoxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711A9984187308AB007BE1FC /* DropBoxTests.m */; };
-		711A999F18730975007BE1FC /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A9996187308E4007BE1FC /* libRestKit.a */; };
 		711A99A11873097D007BE1FC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A01873097D007BE1FC /* CFNetwork.framework */; };
 		711A99A318730987007BE1FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A218730987007BE1FC /* CoreData.framework */; };
 		711A99A518730990007BE1FC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 711A99A418730990007BE1FC /* libxml2.dylib */; };
@@ -82,6 +81,7 @@
 		716430621876339100F923B5 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 716430611876339100F923B5 /* gear.png */; };
 		71643064187633F000F923B5 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 71643063187633F000F923B5 /* wifi.png */; };
 		7164306718763C3D00F923B5 /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164306618763C3D00F923B5 /* Quota.m */; };
+		71E4391B1881893C003610B0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E43912188188C3003610B0 /* libRestKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,37 +92,37 @@
 			remoteGlobalIDString = 711A995B187308AB007BE1FC;
 			remoteInfo = DropBox;
 		};
-		711A9995187308E4007BE1FC /* PBXContainerItemProxy */ = {
+		71E43911188188C3003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D1614564E810060A5C5;
 			remoteInfo = RestKit;
 		};
-		711A9997187308E4007BE1FC /* PBXContainerItemProxy */ = {
+		71E43913188188C3003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D2614564E820060A5C5;
 			remoteInfo = RestKitTests;
 		};
-		711A9999187308E4007BE1FC /* PBXContainerItemProxy */ = {
+		71E43915188188C3003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E62145651060060A5C5;
 			remoteInfo = RestKitFramework;
 		};
-		711A999B187308E4007BE1FC /* PBXContainerItemProxy */ = {
+		71E43917188188C3003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E78145651060060A5C5;
 			remoteInfo = RestKitFrameworkTests;
 		};
-		711A999D18730970007BE1FC /* PBXContainerItemProxy */ = {
+		71E4391918818937003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
@@ -146,7 +146,6 @@
 		711A9980187308AB007BE1FC /* DropBoxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DropBoxTests-Info.plist"; sourceTree = "<group>"; };
 		711A9982187308AB007BE1FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		711A9984187308AB007BE1FC /* DropBoxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropBoxTests.m; sourceTree = "<group>"; };
-		711A998E187308E4007BE1FC /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "../../RestKit-0.20.3/RestKit.xcodeproj"; sourceTree = "<group>"; };
 		711A99A01873097D007BE1FC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		711A99A218730987007BE1FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		711A99A418730990007BE1FC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -220,6 +219,7 @@
 		71643063187633F000F923B5 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
 		7164306518763C3D00F923B5 /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
 		7164306618763C3D00F923B5 /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
+		71E4390A188188C3003610B0 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "RestKit-0.20.3/RestKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E4391B1881893C003610B0 /* libRestKit.a in Frameworks */,
 				711A99AD187309FE007BE1FC /* SystemConfiguration.framework in Frameworks */,
 				711A99AB187309F5007BE1FC /* Security.framework in Frameworks */,
 				711A99A9187309ED007BE1FC /* QuartzCore.framework in Frameworks */,
@@ -234,7 +235,6 @@
 				711A99A518730990007BE1FC /* libxml2.dylib in Frameworks */,
 				711A99A318730987007BE1FC /* CoreData.framework in Frameworks */,
 				711A99A11873097D007BE1FC /* CFNetwork.framework in Frameworks */,
-				711A999F18730975007BE1FC /* libRestKit.a in Frameworks */,
 				711A9962187308AB007BE1FC /* CoreGraphics.framework in Frameworks */,
 				711A9964187308AB007BE1FC /* UIKit.framework in Frameworks */,
 				711A9960187308AB007BE1FC /* Foundation.framework in Frameworks */,
@@ -257,7 +257,7 @@
 		711A9953187308AB007BE1FC = {
 			isa = PBXGroup;
 			children = (
-				711A998E187308E4007BE1FC /* RestKit.xcodeproj */,
+				71E4390A188188C3003610B0 /* RestKit.xcodeproj */,
 				711A9965187308AB007BE1FC /* DropBox */,
 				711A997E187308AB007BE1FC /* DropBoxTests */,
 				711A995E187308AB007BE1FC /* Frameworks */,
@@ -340,17 +340,6 @@
 				711A9981187308AB007BE1FC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		711A998F187308E4007BE1FC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				711A9996187308E4007BE1FC /* libRestKit.a */,
-				711A9998187308E4007BE1FC /* RestKitTests.octest */,
-				711A999A187308E4007BE1FC /* RestKit.framework */,
-				711A999C187308E4007BE1FC /* RestKitFrameworkTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		711A99BE18730B81007BE1FC /* Model classes */ = {
@@ -467,6 +456,17 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		71E4390B188188C3003610B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71E43912188188C3003610B0 /* libRestKit.a */,
+				71E43914188188C3003610B0 /* RestKitTests.octest */,
+				71E43916188188C3003610B0 /* RestKit.framework */,
+				71E43918188188C3003610B0 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,7 +481,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				711A999E18730970007BE1FC /* PBXTargetDependency */,
+				71E4391A18818937003610B0 /* PBXTargetDependency */,
 			);
 			name = DropBox;
 			productName = DropBox;
@@ -532,8 +532,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 711A998F187308E4007BE1FC /* Products */;
-					ProjectRef = 711A998E187308E4007BE1FC /* RestKit.xcodeproj */;
+					ProductGroup = 71E4390B188188C3003610B0 /* Products */;
+					ProjectRef = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -545,32 +545,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		711A9996187308E4007BE1FC /* libRestKit.a */ = {
+		71E43912188188C3003610B0 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRestKit.a;
-			remoteRef = 711A9995187308E4007BE1FC /* PBXContainerItemProxy */;
+			remoteRef = 71E43911188188C3003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		711A9998187308E4007BE1FC /* RestKitTests.octest */ = {
+		71E43914188188C3003610B0 /* RestKitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitTests.octest;
-			remoteRef = 711A9997187308E4007BE1FC /* PBXContainerItemProxy */;
+			remoteRef = 71E43913188188C3003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		711A999A187308E4007BE1FC /* RestKit.framework */ = {
+		71E43916188188C3003610B0 /* RestKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RestKit.framework;
-			remoteRef = 711A9999187308E4007BE1FC /* PBXContainerItemProxy */;
+			remoteRef = 71E43915188188C3003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		711A999C187308E4007BE1FC /* RestKitFrameworkTests.octest */ = {
+		71E43918188188C3003610B0 /* RestKitFrameworkTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitFrameworkTests.octest;
-			remoteRef = 711A999B187308E4007BE1FC /* PBXContainerItemProxy */;
+			remoteRef = 71E43917188188C3003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -676,10 +676,10 @@
 			target = 711A995B187308AB007BE1FC /* DropBox */;
 			targetProxy = 711A997C187308AB007BE1FC /* PBXContainerItemProxy */;
 		};
-		711A999E18730970007BE1FC /* PBXTargetDependency */ = {
+		71E4391A18818937003610B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RestKit;
-			targetProxy = 711A999D18730970007BE1FC /* PBXContainerItemProxy */;
+			targetProxy = 71E4391918818937003610B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
