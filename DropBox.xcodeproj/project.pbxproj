@@ -77,11 +77,17 @@
 		7164305A18762C4A00F923B5 /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164305818762C4A00F923B5 /* settingsViewController.m */; };
 		7164305B18762C4A00F923B5 /* settingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7164305918762C4A00F923B5 /* settingsViewController.xib */; };
 		7164306718763C3D00F923B5 /* Quota.m in Sources */ = {isa = PBXBuildFile; fileRef = 7164306618763C3D00F923B5 /* Quota.m */; };
-		71E4391B1881893C003610B0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E43912188188C3003610B0 /* libRestKit.a */; };
 		71E4392018818A26003610B0 /* arrow-big-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391C18818A26003610B0 /* arrow-big-03.png */; };
 		71E4392118818A26003610B0 /* arrow-big-04.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391D18818A26003610B0 /* arrow-big-04.png */; };
 		71E4392218818A26003610B0 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391E18818A26003610B0 /* gear.png */; };
 		71E4392318818A26003610B0 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E4391F18818A26003610B0 /* wifi.png */; };
+		71E445EE18818BE5003610B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71E445E218818BE4003610B0 /* InfoPlist.strings */; };
+		71E445EF18818BE5003610B0 /* RestKitFramework-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71E445E518818BE4003610B0 /* RestKitFramework-Info.plist */; };
+		71E445F018818BE5003610B0 /* RestKitFrameworkTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71E445E618818BE4003610B0 /* RestKitFrameworkTests-Info.plist */; };
+		71E445F118818BE5003610B0 /* RestKitResources-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71E445E718818BE4003610B0 /* RestKitResources-Info.plist */; };
+		71E445F218818BE5003610B0 /* RestKitTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71E445E818818BE4003610B0 /* RestKitTests-Info.plist */; };
+		71E445F318818BE5003610B0 /* RestKitCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71E445E918818BE4003610B0 /* RestKitCoreData.xcdatamodeld */; };
+		71E4460218818BFC003610B0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E445F918818BE5003610B0 /* libRestKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,37 +98,37 @@
 			remoteGlobalIDString = 711A995B187308AB007BE1FC;
 			remoteInfo = DropBox;
 		};
-		71E43911188188C3003610B0 /* PBXContainerItemProxy */ = {
+		71E445F818818BE5003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
+			containerPortal = 71E445EB18818BE4003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D1614564E810060A5C5;
 			remoteInfo = RestKit;
 		};
-		71E43913188188C3003610B0 /* PBXContainerItemProxy */ = {
+		71E445FA18818BE5003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
+			containerPortal = 71E445EB18818BE4003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D2614564E820060A5C5;
 			remoteInfo = RestKitTests;
 		};
-		71E43915188188C3003610B0 /* PBXContainerItemProxy */ = {
+		71E445FC18818BE5003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
+			containerPortal = 71E445EB18818BE4003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E62145651060060A5C5;
 			remoteInfo = RestKitFramework;
 		};
-		71E43917188188C3003610B0 /* PBXContainerItemProxy */ = {
+		71E445FE18818BE5003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
+			containerPortal = 71E445EB18818BE4003610B0 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E78145651060060A5C5;
 			remoteInfo = RestKitFrameworkTests;
 		};
-		71E4391918818937003610B0 /* PBXContainerItemProxy */ = {
+		71E4460018818BF7003610B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
+			containerPortal = 71E445EB18818BE4003610B0 /* RestKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
@@ -215,11 +221,17 @@
 		7164305918762C4A00F923B5 /* settingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = settingsViewController.xib; sourceTree = "<group>"; };
 		7164306518763C3D00F923B5 /* Quota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quota.h; sourceTree = "<group>"; };
 		7164306618763C3D00F923B5 /* Quota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quota.m; sourceTree = "<group>"; };
-		71E4390A188188C3003610B0 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "RestKit-0.20.3/RestKit.xcodeproj"; sourceTree = "<group>"; };
 		71E4391C18818A26003610B0 /* arrow-big-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-big-03.png"; path = "../../работа/DropBox/arrow-big-03.png"; sourceTree = "<group>"; };
 		71E4391D18818A26003610B0 /* arrow-big-04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-big-04.png"; path = "../../работа/DropBox/arrow-big-04.png"; sourceTree = "<group>"; };
 		71E4391E18818A26003610B0 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = "../../работа/DropBox/gear.png"; sourceTree = "<group>"; };
 		71E4391F18818A26003610B0 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wifi.png; path = "../../работа/DropBox/wifi.png"; sourceTree = "<group>"; };
+		71E445E318818BE4003610B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		71E445E518818BE4003610B0 /* RestKitFramework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RestKitFramework-Info.plist"; sourceTree = "<group>"; };
+		71E445E618818BE4003610B0 /* RestKitFrameworkTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RestKitFrameworkTests-Info.plist"; sourceTree = "<group>"; };
+		71E445E718818BE4003610B0 /* RestKitResources-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RestKitResources-Info.plist"; sourceTree = "<group>"; };
+		71E445E818818BE4003610B0 /* RestKitTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RestKitTests-Info.plist"; sourceTree = "<group>"; };
+		71E445EA18818BE4003610B0 /* RestKitResources-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RestKitResources-Prefix.pch"; sourceTree = "<group>"; };
+		71E445EB18818BE4003610B0 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "RestKit-0.20.3/RestKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71E4391B1881893C003610B0 /* libRestKit.a in Frameworks */,
+				71E4460218818BFC003610B0 /* libRestKit.a in Frameworks */,
 				711A99AD187309FE007BE1FC /* SystemConfiguration.framework in Frameworks */,
 				711A99AB187309F5007BE1FC /* Security.framework in Frameworks */,
 				711A99A9187309ED007BE1FC /* QuartzCore.framework in Frameworks */,
@@ -257,7 +269,8 @@
 		711A9953187308AB007BE1FC = {
 			isa = PBXGroup;
 			children = (
-				71E4390A188188C3003610B0 /* RestKit.xcodeproj */,
+				71E445E118818BE4003610B0 /* Resources */,
+				71E445EB18818BE4003610B0 /* RestKit.xcodeproj */,
 				711A9965187308AB007BE1FC /* DropBox */,
 				711A997E187308AB007BE1FC /* DropBoxTests */,
 				711A995E187308AB007BE1FC /* Frameworks */,
@@ -456,13 +469,36 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		71E4390B188188C3003610B0 /* Products */ = {
+		71E445E118818BE4003610B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				71E43912188188C3003610B0 /* libRestKit.a */,
-				71E43914188188C3003610B0 /* RestKitTests.octest */,
-				71E43916188188C3003610B0 /* RestKit.framework */,
-				71E43918188188C3003610B0 /* RestKitFrameworkTests.octest */,
+				71E445E218818BE4003610B0 /* InfoPlist.strings */,
+				71E445E418818BE4003610B0 /* PLISTs */,
+				71E445E918818BE4003610B0 /* RestKitCoreData.xcdatamodeld */,
+				71E445EA18818BE4003610B0 /* RestKitResources-Prefix.pch */,
+			);
+			name = Resources;
+			path = "RestKit-0.20.3/Resources";
+			sourceTree = "<group>";
+		};
+		71E445E418818BE4003610B0 /* PLISTs */ = {
+			isa = PBXGroup;
+			children = (
+				71E445E518818BE4003610B0 /* RestKitFramework-Info.plist */,
+				71E445E618818BE4003610B0 /* RestKitFrameworkTests-Info.plist */,
+				71E445E718818BE4003610B0 /* RestKitResources-Info.plist */,
+				71E445E818818BE4003610B0 /* RestKitTests-Info.plist */,
+			);
+			path = PLISTs;
+			sourceTree = "<group>";
+		};
+		71E445EC18818BE4003610B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71E445F918818BE5003610B0 /* libRestKit.a */,
+				71E445FB18818BE5003610B0 /* RestKitTests.octest */,
+				71E445FD18818BE5003610B0 /* RestKit.framework */,
+				71E445FF18818BE5003610B0 /* RestKitFrameworkTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -481,7 +517,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				71E4391A18818937003610B0 /* PBXTargetDependency */,
+				71E4460118818BF7003610B0 /* PBXTargetDependency */,
 			);
 			name = DropBox;
 			productName = DropBox;
@@ -532,8 +568,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 71E4390B188188C3003610B0 /* Products */;
-					ProjectRef = 71E4390A188188C3003610B0 /* RestKit.xcodeproj */;
+					ProductGroup = 71E445EC18818BE4003610B0 /* Products */;
+					ProjectRef = 71E445EB18818BE4003610B0 /* RestKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -545,32 +581,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		71E43912188188C3003610B0 /* libRestKit.a */ = {
+		71E445F918818BE5003610B0 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRestKit.a;
-			remoteRef = 71E43911188188C3003610B0 /* PBXContainerItemProxy */;
+			remoteRef = 71E445F818818BE5003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		71E43914188188C3003610B0 /* RestKitTests.octest */ = {
+		71E445FB18818BE5003610B0 /* RestKitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitTests.octest;
-			remoteRef = 71E43913188188C3003610B0 /* PBXContainerItemProxy */;
+			remoteRef = 71E445FA18818BE5003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		71E43916188188C3003610B0 /* RestKit.framework */ = {
+		71E445FD18818BE5003610B0 /* RestKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RestKit.framework;
-			remoteRef = 71E43915188188C3003610B0 /* PBXContainerItemProxy */;
+			remoteRef = 71E445FC18818BE5003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		71E43918188188C3003610B0 /* RestKitFrameworkTests.octest */ = {
+		71E445FF18818BE5003610B0 /* RestKitFrameworkTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitFrameworkTests.octest;
-			remoteRef = 71E43917188188C3003610B0 /* PBXContainerItemProxy */;
+			remoteRef = 71E445FE18818BE5003610B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -581,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				711A9A1318735609007BE1FC /* word48.gif in Resources */,
+				71E445EF18818BE5003610B0 /* RestKitFramework-Info.plist in Resources */,
 				711A9A0118735609007BE1FC /* page_white_code48.gif in Resources */,
 				711A9A0418735609007BE1FC /* page_white_cup48.gif in Resources */,
 				711A9A0918735609007BE1FC /* page_white_paint48.gif in Resources */,
@@ -589,12 +626,14 @@
 				711A99F318735609007BE1FC /* folder48.gif in Resources */,
 				716430471875AB7100F923B5 /* detailViewController.xib in Resources */,
 				711A99F718735609007BE1FC /* folder_public48.gif in Resources */,
+				71E445EE18818BE5003610B0 /* InfoPlist.strings in Resources */,
 				711A9A0D18735609007BE1FC /* page_white_text48.gif in Resources */,
 				711A9A1218735609007BE1FC /* powerpoint48.gif in Resources */,
 				71E4392318818A26003610B0 /* wifi.png in Resources */,
 				711A99F818735609007BE1FC /* folder_star48.gif in Resources */,
 				711A9A0C18735609007BE1FC /* page_white_ruby48.gif in Resources */,
 				7164303F1874D30800F923B5 /* fileThumbView.xib in Resources */,
+				71E445F218818BE5003610B0 /* RestKitTests-Info.plist in Resources */,
 				711A9A0618735609007BE1FC /* page_white_flash48.gif in Resources */,
 				7164305B18762C4A00F923B5 /* settingsViewController.xib in Resources */,
 				71E4392018818A26003610B0 /* arrow-big-03.png in Resources */,
@@ -602,6 +641,7 @@
 				711A996A187308AB007BE1FC /* InfoPlist.strings in Resources */,
 				711A9972187308AB007BE1FC /* Images.xcassets in Resources */,
 				711A9A1018735609007BE1FC /* page_white_visualstudio48.gif in Resources */,
+				71E445F118818BE5003610B0 /* RestKitResources-Info.plist in Resources */,
 				711A9A0518735609007BE1FC /* page_white_dvd.gif in Resources */,
 				711A99FF18735609007BE1FC /* page_white_actionscript48.gif in Resources */,
 				711A9A0318735609007BE1FC /* page_white_csharp.gif in Resources */,
@@ -614,6 +654,7 @@
 				711A9A0018735609007BE1FC /* page_white_c48.gif in Resources */,
 				711A99CE18735435007BE1FC /* customFileCell.xib in Resources */,
 				711A9A0F18735609007BE1FC /* page_white_vector48.gif in Resources */,
+				71E445F018818BE5003610B0 /* RestKitFrameworkTests-Info.plist in Resources */,
 				711A99FC18735609007BE1FC /* package48.gif in Resources */,
 				711A99FD18735609007BE1FC /* page_white48.gif in Resources */,
 				711A9A1118735609007BE1FC /* page_white_zip48.gif in Resources */,
@@ -648,6 +689,7 @@
 				711A99CC1873541C007BE1FC /* customFileCell.m in Sources */,
 				716430511876029F00F923B5 /* uploadFilesViewController.m in Sources */,
 				711A9970187308AB007BE1FC /* AppDelegate.m in Sources */,
+				71E445F318818BE5003610B0 /* RestKitCoreData.xcdatamodeld in Sources */,
 				7164304D1875BEC500F923B5 /* File.m in Sources */,
 				711A99B418730B49007BE1FC /* DropboxFinal.xcdatamodeld in Sources */,
 				711A99C218731495007BE1FC /* remoteFilesViewController.m in Sources */,
@@ -676,10 +718,10 @@
 			target = 711A995B187308AB007BE1FC /* DropBox */;
 			targetProxy = 711A997C187308AB007BE1FC /* PBXContainerItemProxy */;
 		};
-		71E4391A18818937003610B0 /* PBXTargetDependency */ = {
+		71E4460118818BF7003610B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RestKit;
-			targetProxy = 71E4391918818937003610B0 /* PBXContainerItemProxy */;
+			targetProxy = 71E4460018818BF7003610B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -696,6 +738,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				711A9982187308AB007BE1FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		71E445E218818BE4003610B0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71E445E318818BE4003610B0 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -780,6 +830,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropBox/DropBox-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -789,6 +843,13 @@
 				);
 				INFOPLIST_FILE = "DropBox/DropBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/Products/Debug-iphoneos",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/Products/Debug-iphonesimulator",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/RestKit.build/Debug-iphoneos/RestKit.build/Objects-normal/armv7",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/RestKit.build/Debug-iphoneos/RestKit.build/Objects-normal/armv7s",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -800,6 +861,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DropBox/DropBox-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -809,6 +874,13 @@
 				);
 				INFOPLIST_FILE = "DropBox/DropBox-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/Products/Debug-iphoneos",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/Products/Debug-iphonesimulator",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/RestKit.build/Debug-iphoneos/RestKit.build/Objects-normal/armv7",
+					"/Users/viktorchibotaru/Desktop/работа/DropBox/RestKit-0.20.3/Build/RestKit.build/Debug-iphoneos/RestKit.build/Objects-normal/armv7s",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -897,6 +969,14 @@
 			);
 			currentVersion = 711A99B318730B49007BE1FC /* DropboxFinal.xcdatamodel */;
 			path = DropboxFinal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		71E445E918818BE4003610B0 /* RestKitCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+			);
+			path = RestKitCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
